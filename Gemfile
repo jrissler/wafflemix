@@ -7,7 +7,8 @@ gemspec
 
 gem "jquery-rails"
 gem 'bootstrap-sass', '~> 2.0.4.0'
-gem 'formtastic'
+gem 'formtastic', '~> 2.2.1'
+gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
 gem 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch => 'master'
 
 # TODO convert batch_translations to gem or add to globalize3 gem

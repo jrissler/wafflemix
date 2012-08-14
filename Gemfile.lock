@@ -8,6 +8,15 @@ GIT
       activerecord (>= 3.0.0)
       paper_trail (~> 2)
 
+GIT
+  remote: https://github.com/niedfelj/formtastic-bootstrap.git
+  revision: 1fceb6fd98bde05a2e899c0919d24ba144568e8d
+  branch: bootstrap2-rails3-2-formtastic-2-2
+  specs:
+    formtastic-bootstrap (2.0.1)
+      formtastic (~> 2.2.0)
+      rails (>= 3.2.0)
+
 PATH
   remote: .
   specs:
@@ -128,7 +137,8 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.0.4.0)
   coffee-rails (~> 3.2.1)
-  formtastic
+  formtastic (~> 2.2.1)
+  formtastic-bootstrap!
   globalize3!
   jquery-rails
   pg (~> 0.14.0)
