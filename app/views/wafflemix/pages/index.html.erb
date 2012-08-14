@@ -1,0 +1,35 @@
+<h1>Listing pages</h1>
+
+<table>
+  <tr>
+    <th>Parent</th>
+    <th>Position</th>
+    <th>Show in menu</th>
+    <th>Link url</th>
+    <th>Deletable</th>
+    <th>Draft</th>
+    <th>Skip to first</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%= page.parent_id %></td>
+    <td><%= page.position %></td>
+    <td><%= page.show_in_menu %></td>
+    <td><%= page.link_url %></td>
+    <td><%= page.deletable %></td>
+    <td><%= page.draft %></td>
+    <td><%= page.skip_to_first %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page', new_page_path %>

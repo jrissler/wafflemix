@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Parent:</b>
+  <%= @page.parent_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @page.position %>
+</p>
+
+<p>
+  <b>Show in menu:</b>
+  <%= @page.show_in_menu %>
+</p>
+
+<p>
+  <b>Link url:</b>
+  <%= @page.link_url %>
+</p>
+
+<p>
+  <b>Deletable:</b>
+  <%= @page.deletable %>
+</p>
+
+<p>
+  <b>Draft:</b>
+  <%= @page.draft %>
+</p>
+
+<p>
+  <b>Skip to first:</b>
+  <%= @page.skip_to_first %>
+</p>
+
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
