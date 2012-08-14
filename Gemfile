@@ -5,17 +5,13 @@ source "http://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-# bootstrap sass
+gem "jquery-rails"
 gem 'bootstrap-sass', '~> 2.0.4.0'
-
-# for internationalization translations
+gem 'formtastic'
 gem 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch => 'master'
 
 # TODO convert batch_translations to gem or add to globalize3 gem
 # rails plugin install git://github.com/fidel/batch_translations.git
-
-# jquery-rails is used by the dummy application
-gem "jquery-rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
