@@ -1,3 +1,10 @@
 = Wafflemix
 
+To run this app locally:
+cd test/dummy
+
+Setup your db here: wafflemix/test/dummy/config/database.yml
+
+start dummy app with: rails server
+
 This project rocks and uses MIT-LICENSE.
