@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  parent_id: 1
+  position: 1
+  show_in_menu: false
+  link_url: MyString
+  deletable: false
+  draft: false
+  skip_to_first: false
+
+two:
+  parent_id: 1
+  position: 1
+  show_in_menu: false
+  link_url: MyString
+  deletable: false
+  draft: false
+  skip_to_first: false
