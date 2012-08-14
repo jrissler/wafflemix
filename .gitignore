@@ -7,3 +7,6 @@ test/dummy/tmp/
 test/dummy/.sass-cache
 
 .idea
+
+#ignore user dummy app database config
+test/dummy/config/database.yml
