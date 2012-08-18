@@ -1,0 +1,21 @@
+<%= semantic_form_for [:admin, @page] do |f| %>
+
+    <%= f.inputs :name => "Basic" do %>
+        <%= f.input :title %>
+        <%= f.input :body %>
+    <% end %>
+
+    <%= f.inputs :name => "Advanced" do %>
+        <%= f.input :show_in_menu, :hint => "Show this page in the main menu" %>
+        <%= f.input :link_url %>
+        <%= f.input :deletable %>
+        <%= f.input :draft %>
+        <%= f.input :skip_to_first %>
+    <% end %>
+
+    <%= f.actions do %>
+        <%= f.action :submit, :as => :button %>
+        <%= link_to 'Cancel', admin_pages_path, :class => 'btn' %>
+    <% end %>
+
+<% end %>
