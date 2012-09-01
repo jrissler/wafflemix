@@ -1,42 +1,41 @@
-<div class="span2">
-  <p>sidebar</p>
-</div>
-
-<div class="span10">
-  <h1>Listing pages</h1>
-
-  <table>
+<div class="span9">
+  <div class='page-header'>
+    <h1>Content Pages</h1>
+  </div>
+  <table class="table table-striped">
     <tr>
-      <th>Parent</th>
-      <th>Position</th>
+      <th>Title</th>
       <th>Show in menu</th>
       <th>Link url</th>
-      <th>Deletable</th>
       <th>Draft</th>
-      <th>Skip to first</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Actions</th>
     </tr>
 
   <% @pages.each do |page| %>
     <tr>
-      <td><%= page.parent_id %></td>
-      <td><%= page.position %></td>
+      <td><%= page.title %></td>
       <td><%= page.show_in_menu %></td>
       <td><%= page.link_url %></td>
-      <td><%= page.deletable %></td>
       <td><%= page.draft %></td>
-      <td><%= page.skip_to_first %></td>
-      <td><%= link_to 'Show', page %></td>
-      <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
-      <td><%= link_to 'Destroy', [:admin, page], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td><%= link_to 'Destroy', [:admin, page], confirm: 'Are you sure?', method: :delete %></td>
+      <td>
+        <%= link_to 'Edit', edit_admin_page_path(page), :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'View Page', page, :class => 'btn btn-success btn-small' %>
+        <%= link_to 'Delete', [:admin, page], confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger btn-small' %>
+      </td>
     </tr>
   <% end %>
   </table>
+</div>
 
-  <br />
-
-  <%= link_to 'New Page', new_admin_page_path %>
+<div class="span3">
+  <div class='page-header'>
+    <h1>Options</h1>
+  </div>
+  <ul class="nav nav-tabs nav-stacked">
+    <li><%= link_to 'Add a Page', new_admin_page_path %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+  </ul>
 </div>

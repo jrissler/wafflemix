@@ -56,6 +56,7 @@ heroku config:add S3_KEY=***your-s3-key*** S3_SECRET=***your-s3-secret*** S3_BUC
 ##Todo's
 New app generators
 Instructions for S3 config
+Seed Default roles
 
 
 This project rocks and uses MIT-LICENSE.

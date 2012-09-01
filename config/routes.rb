@@ -1,8 +1,4 @@
 Wafflemix::Engine.routes.draw do
-  resources :users
-  resources :roles
-  resources :assets
-
   mount Mercury::Engine => '/'
 
   resources :pages, :only => [:index, :show, :home]
@@ -10,6 +6,9 @@ Wafflemix::Engine.routes.draw do
 
   namespace :admin do
     resources :pages
+    resources :users
+    resources :roles
+    resources :assets
   end
 
   root :to => "pages#home"

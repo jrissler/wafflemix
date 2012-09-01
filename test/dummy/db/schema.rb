@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814113226) do
+ActiveRecord::Schema.define(:version => 20120901151704) do
+
+  create_table "wafflemix_assets", :force => true do |t|
+    t.string   "asset_uid"
+    t.string   "asset_mime_type"
+    t.integer  "asset_file_size"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "wafflemix_page_translations", :force => true do |t|
     t.integer  "wafflemix_page_id"
@@ -36,5 +44,41 @@ ActiveRecord::Schema.define(:version => 20120814113226) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  create_table "wafflemix_roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "wafflemix_user_roles", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "wafflemix_user_roles", ["role_id"], :name => "index_wafflemix_user_roles_on_role_id"
+  add_index "wafflemix_user_roles", ["user_id"], :name => "index_wafflemix_user_roles_on_user_id"
+
+  create_table "wafflemix_users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "wafflemix_users", ["email"], :name => "index_wafflemix_users_on_email", :unique => true
+  add_index "wafflemix_users", ["reset_password_token"], :name => "index_wafflemix_users_on_reset_password_token", :unique => true
+  add_index "wafflemix_users", ["username"], :name => "index_wafflemix_users_on_username", :unique => true
 
 end

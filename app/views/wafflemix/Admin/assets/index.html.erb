@@ -1,0 +1,41 @@
+<div class="span9">
+  <div class='page-header'>
+    <h1>Files and Images</h1>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>Asset Name</th>
+      <th>Asset uid</th>
+      <th>Asset type</th>
+      <th>Asset file size</th>
+      <th></th>
+    </tr>
+
+    <% @assets.each do |asset| %>
+      <tr>
+        <td>need to add</td>
+        <td><%= asset.asset_uid %></td>
+        <td><%= asset.asset_mime_type %></td>
+        <td><%= asset.asset_file_size %></td>
+        <td>
+          <%= link_to 'Edit', [:edit, :admin, asset], :class => 'btn btn-primary btn-small' %>
+          <%= link_to 'View', [:admin, asset], :class => 'btn btn-success btn-small' %>
+          <%= link_to 'Destroy', [:admin, asset], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="span3">
+  <div class='page-header'>
+    <h1>Options</h1>
+  </div>
+  <ul class="nav nav-tabs nav-stacked">
+    <li><%= link_to 'Add an Image', new_admin_asset_path %></li>
+    <li><%= link_to 'Add a File', new_admin_asset_path %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+  </ul>
+</div>

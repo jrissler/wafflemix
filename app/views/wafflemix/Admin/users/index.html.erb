@@ -1,0 +1,36 @@
+<div class="span9">
+  <div class='page-header'>
+    <h1>Users</h1>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td>
+        <%= link_to 'Edit', [:edit, :admin, user], :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'Delete', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="span3">
+  <div class='page-header'>
+    <h1>Options</h1>
+  </div>
+  <ul class="nav nav-tabs nav-stacked">
+    <li><%= link_to 'Add a User', new_admin_user_path %></li>
+    <li><%= link_to "Manage Roles", admin_roles_path %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+  </ul>
+</div>

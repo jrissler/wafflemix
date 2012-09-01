@@ -14,7 +14,7 @@ module Wafflemix
                 icon_bar += content_tag(:span, '', :class => 'icon-bar')
                 icon_bar.html_safe
               end
-              container_content += link_to('WaffleMix', root_path, :class => 'brand')
+              container_content += link_to('WaffleMix', '#', :class => 'brand')
               container_content += content_tag(:div, '', :class => 'nav-collapse collapse') do
                 content_tag(:ul, :class => 'nav') do
                   top_nav_links.html_safe
@@ -38,11 +38,11 @@ module Wafflemix
     end
 
     def top_nav_links
-      t = content_tag(:li, link_to('Dashboard', '#'), :class => 'active')
+      t = content_tag(:li, link_to('Switch to Site', root_path, :class => 'brand brand_switch'))
+      t += content_tag(:li, link_to('Dashboard', '#'), :class => 'active')
       t += content_tag(:li, link_to('Pages', admin_pages_path))
-      t += content_tag(:li, link_to('Base CSS', '#'))
-      t += content_tag(:li, link_to('Components', '#'))
-      t += content_tag(:li, link_to('Javascript', '#'))
+      t += content_tag(:li, link_to('Users', admin_users_path))
+      t += content_tag(:li, link_to('Files and Images', admin_assets_path))
       t += content_tag(:li, link_to('Using LESS', '#'))
       t += content_tag(:li, '', :class => 'divider-vertical')
       t += content_tag(:li, link_to('Examples', '#'))
