@@ -8,6 +8,8 @@ test/dummy/.sass-cache
 
 .idea
 .powenv
+test/dummy/config/initializers/local_S3.rb
 
 #ignore user dummy app database config
 test/dummy/config/database.yml
+
