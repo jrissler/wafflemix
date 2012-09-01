@@ -8,7 +8,6 @@ module Wafflemix
   
       respond_to do |format|
         format.html
-        format.json { render json: @pages }
       end
     end
 
@@ -17,7 +16,14 @@ module Wafflemix
   
       respond_to do |format|
         format.html
-        format.json { render json: @page }
+      end
+    end
+
+    def home
+      @page = Page.find_by_link_url("/")
+
+      respond_to do |format|
+        format.html
       end
     end
   end
