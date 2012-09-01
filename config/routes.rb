@@ -1,4 +1,7 @@
 Wafflemix::Engine.routes.draw do
+  resources :users
+  resources :assets
+
   mount Mercury::Engine => '/'
 
   resources :pages, :only => [:index, :show, :home]
