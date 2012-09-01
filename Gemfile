@@ -12,6 +12,11 @@ gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-boot
 gem 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch => 'master'
 
 gem 'mercury-rails'
+gem 'devise', '2.0.4'
+
+#image handling
+gem 'dragonfly'
+gem 'fog'
 
 # TODO convert batch_translations to gem or add to globalize3 gem
 # rails plugin install git://github.com/fidel/batch_translations.git
