@@ -38,8 +38,8 @@ module Wafflemix
     end
 
     def top_nav_links
-      t = content_tag(:li, link_to('Overview', '#'), :class => 'active')
-      t += content_tag(:li, link_to('Scaffolding', '#'))
+      t = content_tag(:li, link_to('Dashboard', '#'), :class => 'active')
+      t += content_tag(:li, link_to('Pages', admin_pages_path))
       t += content_tag(:li, link_to('Base CSS', '#'))
       t += content_tag(:li, link_to('Components', '#'))
       t += content_tag(:li, link_to('Javascript', '#'))

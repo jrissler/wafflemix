@@ -1,35 +1,41 @@
-<h1>Listing pages</h1>
+<div class="span2">
+  <p>sidebar</p>
+</div>
 
-<table>
-  <tr>
-    <th>Parent</th>
-    <th>Position</th>
-    <th>Show in menu</th>
-    <th>Link url</th>
-    <th>Deletable</th>
-    <th>Draft</th>
-    <th>Skip to first</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="span10">
+  <h1>Listing pages</h1>
 
-<% @pages.each do |page| %>
-  <tr>
-    <td><%= page.parent_id %></td>
-    <td><%= page.position %></td>
-    <td><%= page.show_in_menu %></td>
-    <td><%= page.link_url %></td>
-    <td><%= page.deletable %></td>
-    <td><%= page.draft %></td>
-    <td><%= page.skip_to_first %></td>
-    <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
-    <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <table>
+    <tr>
+      <th>Parent</th>
+      <th>Position</th>
+      <th>Show in menu</th>
+      <th>Link url</th>
+      <th>Deletable</th>
+      <th>Draft</th>
+      <th>Skip to first</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<br />
+  <% @pages.each do |page| %>
+    <tr>
+      <td><%= page.parent_id %></td>
+      <td><%= page.position %></td>
+      <td><%= page.show_in_menu %></td>
+      <td><%= page.link_url %></td>
+      <td><%= page.deletable %></td>
+      <td><%= page.draft %></td>
+      <td><%= page.skip_to_first %></td>
+      <td><%= link_to 'Show', page %></td>
+      <td><%= link_to 'Edit', edit_page_path(page) %></td>
+      <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<%= link_to 'New Page', new_admin_page_path %>
+  <br />
+
+  <%= link_to 'New Page', new_admin_page_path %>
+</div>
