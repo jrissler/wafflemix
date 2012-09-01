@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Wafflemix::Engine => "/wafflemix"
+  mount Wafflemix::Engine => "/"
 
-  root :to => 'pages#index'
 end
