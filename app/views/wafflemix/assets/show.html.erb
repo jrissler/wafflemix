@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Asset uid:</b>
+  <%= @asset.asset_uid %>
+</p>
+
+<p>
+  <b>Asset mime type:</b>
+  <%= @asset.asset_mime_type %>
+</p>
+
+<p>
+  <b>Asset file size:</b>
+  <%= @asset.asset_file_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |
+<%= link_to 'Back', assets_path %>
