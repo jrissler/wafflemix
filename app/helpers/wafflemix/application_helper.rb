@@ -14,7 +14,7 @@ module Wafflemix
                 icon_bar += content_tag(:span, '', :class => 'icon-bar')
                 icon_bar.html_safe
               end
-              container_content += link_to('WaffleMix', main_app.root_path, :class => 'brand')
+              container_content += link_to('WaffleMix', root_path, :class => 'brand')
               container_content += content_tag(:div, '', :class => 'nav-collapse collapse') do
                 content_tag(:ul, :class => 'nav') do
                   top_nav_links.html_safe
