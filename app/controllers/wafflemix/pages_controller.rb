@@ -13,7 +13,7 @@ module Wafflemix
 
     def show
       #@page = Page.find(params[:id])
-      @page = Page.find_by_title(params[:path].to_s.split('/').last.capitalize)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
+      @page = Page.find_by_link_url('/' + params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
   
       respond_to do |format|
         format.html
