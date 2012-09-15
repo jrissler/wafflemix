@@ -19,16 +19,14 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.8"
   # s.add_dependency "jquery-rails"
 
-  gem "jquery-rails"
-  gem 'bootstrap-sass', '~> 2.0.4.1'
-  gem 'formtastic', '~> 2.2.1'
-  gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
-  gem 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch => 'master'
-
-  gem 'mercury-rails'
-  gem 'devise', '2.0.4'
-  gem 'ancestry', '1.3.0'
-
-  gem 'dragonfly'
-  gem 'fog'
+  s.add_dependency "jquery-rails"
+  s.add_dependency 'bootstrap-sass', '~> 2.0.4.1'
+  s.add_dependency 'formtastic', '~> 2.2.1'
+  s.add_dependency 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
+  s.add_dependency 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch => 'master'
+  s.add_dependency 'mercury-rails'
+  s.add_dependency 'devise', '2.0.4'
+  s.add_dependency 'ancestry', '1.3.0'
+  s.add_dependency 'dragonfly'
+  s.add_dependency 'fog'
 end
