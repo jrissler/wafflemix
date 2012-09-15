@@ -6,8 +6,10 @@ namespace :wafflemix do
   # end
 
   desc "Create Initial Pages"
-  task :initial_pages do
-    Page.create()
+  task :initial_setup do
+    Page.create(:link_url => '/', :title => 'Home', :draft => false, :deletable => false)
+    Role.create(:name => 'admin')
+    Role.create(:name => 'super_user')
   end
 
 end
