@@ -8,5 +8,9 @@ module Wafflemix
     has_ancestry
 
     translates :title, :body
+
+    class Translation
+      attr_accessible :title, :body, :locale
+    end
   end
 end
