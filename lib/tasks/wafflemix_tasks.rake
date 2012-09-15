@@ -7,9 +7,9 @@ namespace :wafflemix do
 
   desc "Create Initial Pages"
   task :initial_setup do
-    Page.create(:link_url => '/', :title => 'Home', :draft => false, :deletable => false)
-    Role.create(:name => 'admin')
-    Role.create(:name => 'super_user')
+    ::Wafflemix::Page.create(:link_url => '/', :title => 'Home', :draft => false, :deletable => false)
+    ::Wafflemix::Role.create(:name => 'admin')
+    ::Wafflemix::Role.create(:name => 'super_user')
   end
 
 end
