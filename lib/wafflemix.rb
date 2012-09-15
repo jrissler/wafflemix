@@ -4,6 +4,7 @@ require "formtastic"
 require "mercury-rails"
 require "formtastic-bootstrap"
 require "ancestry"
+require "globalize3"
 
 module Wafflemix
 end
