@@ -6,6 +6,7 @@
     <% end %>
 
     <%= f.inputs :name => "Advanced" do %>
+        <%= f.input :parent_id, :as => :select, :collection => Wafflemix::Page.all %>
         <%= f.input :show_in_menu, :hint => "Show this page in the main menu" %>
         <%= f.input :link_url %>
         <%= f.input :deletable %>

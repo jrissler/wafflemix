@@ -5,11 +5,16 @@ Wafflemix::Engine.routes.draw do
   resources :images
 
   namespace :admin do
-    resources :pages
+    resources :pages do
+      collection { post :sort }
+    end
     resources :users
     resources :roles
     resources :assets
   end
 
   root :to => "pages#home"
+
+  #this is our catch-all-route
+  match '*path' => 'pages#show'
 end

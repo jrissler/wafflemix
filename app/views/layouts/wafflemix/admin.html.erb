@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wafflemix</title>
-  <%= stylesheet_link_tag    "wafflemix/application", :media => "all" %>
-  <%= javascript_include_tag "wafflemix/application" %>
+  <title>Wafflemix Admin</title>
+  <%= stylesheet_link_tag    "wafflemix/admin/admin", :media => "all" %>
+  <%= javascript_include_tag "wafflemix/admin/admin_js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,7 +11,6 @@
   <div class="container-fluid container">
     <%= main_subnav %>
     <div class="row-fluid">
-      <%= main_menu(@menu_items) %>
       <%= yield %>
     </div>
   </div>
