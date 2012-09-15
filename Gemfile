@@ -13,6 +13,7 @@ gem 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch =
 
 gem 'mercury-rails'
 gem 'devise', '2.0.4'
+gem 'ancestry', '1.3.0'
 
 #image handling
 gem 'dragonfly'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901151704) do
+ActiveRecord::Schema.define(:version => 20120915124116) do
 
   create_table "wafflemix_assets", :force => true do |t|
     t.string   "asset_uid"
@@ -43,7 +43,10 @@ ActiveRecord::Schema.define(:version => 20120901151704) do
     t.boolean  "skip_to_first"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "ancestry"
   end
+
+  add_index "wafflemix_pages", ["ancestry"], :name => "index_wafflemix_pages_on_ancestry"
 
   create_table "wafflemix_roles", :force => true do |t|
     t.string   "name"
