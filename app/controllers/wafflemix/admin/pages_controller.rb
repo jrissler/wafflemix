@@ -2,8 +2,8 @@ require_dependency "wafflemix/application_controller"
 
 module Wafflemix
   class Admin::PagesController < ApplicationController
-    layout "wafflemix/admin"
 
+    layout "wafflemix/admin"
 
     def index
       @pages = Page.arrange(:order => :position)

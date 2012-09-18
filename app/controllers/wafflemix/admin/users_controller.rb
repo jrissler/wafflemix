@@ -3,6 +3,8 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class Admin::UsersController < ApplicationController
 
+    layout "wafflemix/admin"
+
     def index
       @users = User.all
 
