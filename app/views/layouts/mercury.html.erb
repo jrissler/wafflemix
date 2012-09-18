@@ -6,18 +6,6 @@
     <title>Mercury Editor</title>
     <%= stylesheet_link_tag    'mercury' %>
     <%= javascript_include_tag 'jquery', 'mercury' %>
-    <javascript>
-      jQuery(function() {
-        Mercury.on('ready', function() {
-          var link = $('#mercury_iframe').contents().find('#edit_link');
-          Mercury.saveURL = link.data('save-url');
-          link.hide();
-        });
-        Mercury.on('saved', function() {
-          window.location = window.location.href.replace(/\/editor\//i, '/');
-        });
-      });
-    </javascript>
   </head>
   <body>
     <script type="text/javascript">
@@ -27,7 +15,7 @@
       // Instantiate the PageEditor
       new Mercury.PageEditor(saveUrl, {
         saveStyle:  'form', // 'form', or 'json' (default json)
-        saveMethod: null, // 'PUT', or 'POST', (create, vs. update -- default PUT)
+        saveMethod: 'POST', // 'PUT', or 'POST', (create, vs. update -- default PUT)
         visible:    true  // boolean - if the interface should start visible or not
       });
     </script>

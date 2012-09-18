@@ -1,40 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Parent:</b>
-  <%= @page.parent_id %>
-</p>
+<h1><span id="page_title" class="mercury-region" data-mercury="full"><%= raw @page.title %></span></h1>
+<div id="page_body" class="mercury-region" data-mercury="full">
+  <%= raw @page.body %>
+</div>
+<p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_page_path(@page.id)} %></p>
 
-<p>
-  <b>Position:</b>
-  <%= @page.position %>
-</p>
-
-<p>
-  <b>Show in menu:</b>
-  <%= @page.show_in_menu %>
-</p>
-
-<p>
-  <b>Link url:</b>
-  <%= @page.link_url %>
-</p>
-
-<p>
-  <b>Deletable:</b>
-  <%= @page.deletable %>
-</p>
-
-<p>
-  <b>Draft:</b>
-  <%= @page.draft %>
-</p>
-
-<p>
-  <b>Skip to first:</b>
-  <%= @page.skip_to_first %>
-</p>
-
-
-<%= link_to 'Edit', edit_admin_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+<% if current_user %>
+  <%= link_to 'Edit', edit_admin_page_path(@page) %> |
+  <%= link_to 'Back', pages_path %>
+<% end %>
