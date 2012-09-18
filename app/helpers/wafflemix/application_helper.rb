@@ -43,7 +43,7 @@ module Wafflemix
       t += content_tag(:li, link_to('Pages', admin_pages_path))
       t += content_tag(:li, link_to('Users', admin_users_path))
       t += content_tag(:li, link_to('Files and Images', admin_assets_path))
-      t += content_tag(:li, link_to('Using LESS', '#'))
+      t += content_tag(:li, link_to('Categories', admin_categories_path))
       t += content_tag(:li, '', :class => 'divider-vertical')
       t += content_tag(:li, link_to('Examples', '#'))
       t += content_tag(:li, link_to('Customize', '#'))

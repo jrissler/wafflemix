@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120915124116) do
+ActiveRecord::Schema.define(:version => 20120915192514) do
 
   create_table "wafflemix_assets", :force => true do |t|
     t.string   "asset_uid"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20120915124116) do
   end
 
   add_index "wafflemix_page_translations", ["locale"], :name => "index_wafflemix_page_translations_on_locale"
-  add_index "wafflemix_page_translations", ["wafflemix_page_id"], :name => "index_wafflemix_page_translations_on_wafflemix_page_id"
+  add_index "wafflemix_page_translations", ["wafflemix_page_id"], :name => "index_d726c55d32afe225f4f593cd5049b918f4a395ff"
 
   create_table "wafflemix_pages", :force => true do |t|
     t.integer  "parent_id"

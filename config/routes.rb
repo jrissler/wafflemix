@@ -11,7 +11,10 @@ Wafflemix::Engine.routes.draw do
     resources :users
     resources :roles
     resources :assets
+    resources :categories
   end
+
+  devise_for :user
 
   root :to => "pages#home"
 

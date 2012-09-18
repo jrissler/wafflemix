@@ -56,6 +56,9 @@ module Dummy
     config.assets.version = '1.0'
 
     config.middleware.insert 0, 'Dragonfly::Middleware', :images
+
+    #mainly for devise views to load from our engine
+    config.railties_order = [Wafflemix::Engine, :main_app, :all]
   end
 end
 

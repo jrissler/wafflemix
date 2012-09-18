@@ -35,6 +35,12 @@ start dummy app with: rails server
    On config/application.rb forcing your application to not access the DB
    or load models when precompiling your assets.
 
+5. Since devise is an engine and this CMS is an engine, we need to set the order in which their loaded.
+
+  In config/application.rb add:
+
+  config.railties_order = [Wafflemix::Engine, :main_app, :all]
+
 Read more about Devise: https://github.com/plataformatec/devise
 
 = S3 uploads
