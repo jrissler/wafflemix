@@ -12,9 +12,12 @@ module Wafflemix
     end
 
     def show
-      #@page = Page.find(params[:id])
-      @page = Page.find_by_link_url('/' + params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
-  
+      if params[:id]
+        @page = Page.find(params[:id])
+      else
+        @page = Page.find_by_link_url('/' + params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
+      end
+
       respond_to do |format|
         format.html
       end
@@ -27,5 +30,14 @@ module Wafflemix
         format.html
       end
     end
+
+    def mercury_update
+      page = Page.find(params[:id])
+      page.title = params[:content][:page_title][:value]
+      page.body = params[:content][:page_body][:value]
+      page.save!
+      render text: ""
+    end
+
   end
 end
