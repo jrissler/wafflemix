@@ -16,7 +16,10 @@ Wafflemix::Engine.routes.draw do
     resources :categories
   end
 
-  devise_for :user
+  devise_for :users, {
+    class_name: 'Wafflemix::User',
+    module: :devise,
+  }
 
   root :to => "pages#home"
 
