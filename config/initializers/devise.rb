@@ -194,7 +194,7 @@ Devise.setup do |config|
   # config.sign_out_all_scopes = true
 
   
-  config.router_name = :wafflemix_user
+  config.router_name = :wafflemix
 
 
   # ==> Navigation configuration
