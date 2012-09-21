@@ -19,6 +19,8 @@ gem 'ancestry', '1.3.0'
 gem 'dragonfly'
 gem 'fog'
 
+gem 'haml-rails'
+
 # TODO convert batch_translations to gem or add to globalize3 gem
 # rails plugin install git://github.com/fidel/batch_translations.git
 
