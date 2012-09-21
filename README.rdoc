@@ -7,6 +7,12 @@ Setup your db here: wafflemix/test/dummy/config/database.yml
 
 start dummy app with: rails server
 
+= Using as an engine + settig up new application
+
+1. config/application.rb - add to bottom: config.railties_order = [:main_app, Wafflemix::Engine, :all]
+
+2. config/routes.rb - add: mount Wafflemix::Engine => "/"
+
 = Devise
 
 1. Ensure you have defined default url options in your environments files. Here

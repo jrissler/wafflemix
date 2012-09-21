@@ -13,3 +13,5 @@ test/dummy/config/initializers/local_S3.rb
 #ignore user dummy app database config
 test/dummy/config/database.yml
 
+
+test/dummy/config/database.yml
