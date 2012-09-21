@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'ancestry', '1.3.0'
   s.add_dependency 'dragonfly'
   s.add_dependency 'fog'
+  s.add_dependency 'haml-rails'
 end

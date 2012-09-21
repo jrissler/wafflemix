@@ -8,5 +8,7 @@ require "ancestry"
 require "globalize3"
 require "haml-rails"
 
+require 'haml'
+
 module Wafflemix
 end
