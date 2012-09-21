@@ -17,7 +17,7 @@ Wafflemix::Engine.routes.draw do
   end
 
   devise_for :users, {
-    class_name: 'Wafflemix::User',
+    class_name: '::Wafflemix::User',
     module: :devise,
   }
 
