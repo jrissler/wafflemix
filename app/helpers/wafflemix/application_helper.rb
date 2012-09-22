@@ -61,7 +61,7 @@ module Wafflemix
     def main_menu(pages)
       pages.map do |page, sub_pages|
         content_tag(:li, :id => page.title, :class => menu_level_class(page)) do
-          link_to(page.title, link_with_parents(page)) + (content_tag(:ul, main_menu(sub_pages)) if sub_pages.any?)
+          link_to(page.title, link_with_parents(page)) + (content_tag(:ul, main_menu(sub_pages), :class => 'dropdown') if sub_pages.any?)
         end
       end.join.html_safe
     end
