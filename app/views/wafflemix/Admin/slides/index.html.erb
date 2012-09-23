@@ -1,33 +1,9 @@
-<h1>Listing slides</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @slides.each do |slide| %>
-  <tr>
-    <td><%= slide.name %></td>
-    <td><%= link_to 'Show', slide %></td>
-    <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
-    <td><%= link_to 'Destroy', slide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Slide', new_slide_path %>
-
 <div class="span9">
   <div class='page-header'>
     <h1>Slides</h1>
   </div>
-  <ul class="sortable" data-update-url="<%= sort_admin_pages_path %>">
-    <%= tree_view(@pages) %>
+  <ul class="one_level_sortable" data-update-url="<%= sort_admin_slides_path %>">
+    <%= slide_tree_view(@slides) %>
   </ul>
 </div>
 
@@ -36,7 +12,7 @@
     <h1>Options</h1>
   </div>
   <ul class="nav nav-tabs nav-stacked">
-    <li><%= link_to 'Add a Page', new_admin_page_path %></li>
+    <li><%= link_to 'Add a Slide', new_admin_slide_path %></li>
     <li><%= link_to "Test Link", '#' %></li>
     <li><%= link_to "Test Link", '#' %></li>
     <li><%= link_to "Test Link", '#' %></li>

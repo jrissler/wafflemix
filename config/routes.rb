@@ -10,12 +10,14 @@ Wafflemix::Engine.routes.draw do
     resources :pages do
       collection { post :sort }
     end
+    resources :slides do
+      collection { post :sort}
+    end
     resources :users
     resources :roles
     resources :assets
     resources :categories
     resources :content_sections
-    resources :slides
   end
 
   devise_for :users, {

@@ -3,11 +3,13 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class Admin::SlidesController < ApplicationController
 
+    layout "wafflemix/admin"
+
     def index
       @slides = Slide.all
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html
         format.json { render json: @slides }
       end
     end
@@ -16,7 +18,7 @@ module Wafflemix
       @slide = Slide.find(params[:id])
   
       respond_to do |format|
-        format.html # show.html.erb
+        format.html
         format.json { render json: @slide }
       end
     end
@@ -25,7 +27,7 @@ module Wafflemix
       @slide = Slide.new
   
       respond_to do |format|
-        format.html # new.html.erb
+        format.html
         format.json { render json: @slide }
       end
     end
@@ -39,7 +41,7 @@ module Wafflemix
   
       respond_to do |format|
         if @slide.save
-          format.html { redirect_to @slide, notice: 'Slide was successfully created.' }
+          format.html { redirect_to admin_slides_path, notice: 'Slide was successfully created.' }
           format.json { render json: @slide, status: :created, location: @slide }
         else
           format.html { render action: "new" }
@@ -53,7 +55,7 @@ module Wafflemix
   
       respond_to do |format|
         if @slide.update_attributes(params[:slide])
-          format.html { redirect_to @slide, notice: 'Slide was successfully updated.' }
+          format.html { redirect_to admin_slides_path, notice: 'Slide was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }
@@ -67,9 +69,20 @@ module Wafflemix
       @slide.destroy
   
       respond_to do |format|
-        format.html { redirect_to slides_url }
+        format.html { redirect_to admin_slides_path }
         format.json { head :no_content }
       end
+    end
+
+    def sort
+      params[:slide].sort { |a, b| a <=> b }.each_with_index do |id, index|
+        value = id[1][:id]
+        position = id[1][:position]
+        position = position.to_i + 1
+        id[1][:parent_id] == "null" ? parent = nil : parent = id[1][:parent_id]
+        Slide.update(value, :position => position, :parent_id => parent)
+      end
+      render :nothing => true
     end
   end
 end
