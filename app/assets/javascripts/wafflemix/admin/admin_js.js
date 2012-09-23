@@ -8,5 +8,6 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap-dropdown
+//= require bootstrap-tab
 //= require wafflemix/admin/jquery.nested_sortable
 //= require wafflemix/admin/admin

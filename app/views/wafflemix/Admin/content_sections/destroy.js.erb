@@ -1,0 +1,4 @@
+var tabToRemove = $('a[href="#<%= @section_name.parameterize %>"]');
+$(tabToRemove).parent().remove();
+$('#<%= @section_name.parameterize %>').remove();
+$('#content_part_tab li a').first().tab('show');

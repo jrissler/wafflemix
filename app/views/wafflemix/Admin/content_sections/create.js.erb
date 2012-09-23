@@ -1,0 +1,3 @@
+$('#content_part_tab').append('<li class=""><a href="#<%= @content_section.name.parameterize %>" data-toggle="tab"><%= @content_section.name %></a></li>');
+$('.tab-content').append('<div class="tab-pane" id="<%= @content_section.name.parameterize %>"><div><%= @content_section.content %></div></div>');
+$('#<%= @content_section.name.parameterize %>').tab('show');

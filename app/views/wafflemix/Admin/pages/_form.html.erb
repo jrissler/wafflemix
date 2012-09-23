@@ -1,22 +1,44 @@
 <%= semantic_form_for [:admin, @page] do |f| %>
 
     <%= f.inputs :name => "Basic" do %>
-        <%= f.input :title %>
-        <%= f.input :body %>
+      <%= f.input :title %>
+      <%= label_tag :content_sections %>
+      <ul class="nav nav-tabs" id="content_part_tab">
+        <% @page.content_parts.each do |content_part| %>
+        <li class="<%= content_part == @page.content_parts.first ? 'active' : 'not_active' %>">
+          <%= link_to content_part.name, '#' + content_part.name.downcase.gsub(' ', '-'), 'data-toggle' => "tab" %>
+        </li>
+        <% end %>
+        <%= content_tag "li", class: "add_content_tab", data: {resource: @page.class.to_s, id: @page.id} do %>
+          <%= link_to "<i class='icon-plus'></i> Add New Section".html_safe, '#add_new', :class => 'add_content_link', 'data-toggle' => "tab" %>
+        <% end %>
+      </ul>
+
+      <div class="tab-content">
+        <% @page.content_parts.each do |content_part| %>
+          <%= f.fields_for :content_parts, content_part do |cp| %>
+            <div class="tab-pane <%= content_part == @page.content_parts.first ? 'active' : 'not_active' %>" id="<%= content_part.name.downcase.gsub(' ', '-') %>">
+              <%= cp.input :content %>
+              <p><%= link_to "<i class='icon-remove'></i> Delete This Content Section".html_safe, [:admin, content_part], confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger btn-small', :remote => true %></p>
+            </div>
+          <% end %>
+        <% end %>
+        <div class="tab-pane active" id="add_new"></div>
+      </div>
     <% end %>
 
     <%= f.inputs :name => "Advanced" do %>
-        <%= f.input :parent_id, :as => :select, :collection => Wafflemix::Page.all %>
-        <%= f.input :show_in_menu, :hint => "Show this page in the main menu" %>
-        <%= f.input :link_url %>
-        <%= f.input :deletable %>
-        <%= f.input :draft %>
-        <%= f.input :skip_to_first %>
+      <%= f.input :parent_id, :as => :select, :collection => Wafflemix::Page.all %>
+      <%= f.input :show_in_menu, :hint => "Show this page in the main menu" %>
+      <%= f.input :link_url %>
+      <%= f.input :deletable %>
+      <%= f.input :draft %>
+      <%= f.input :skip_to_first %>
     <% end %>
 
     <%= f.actions do %>
-        <%= f.action :submit, :as => :button %>
-        <%= link_to 'Cancel', admin_pages_path, :class => 'btn' %>
+      <%= f.action :submit, :as => :button %>
+      <%= link_to 'Cancel', admin_pages_path, :class => 'btn' %>
     <% end %>
 
 <% end %>
