@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contentable_id: 1
+  contentable_type: MyString
+  name: MyString
+  content: MyText
+
+two:
+  contentable_id: 1
+  contentable_type: MyString
+  name: MyString
+  content: MyText

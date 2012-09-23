@@ -1,0 +1,33 @@
+<%= form_for(@content_section) do |f| %>
+  <% if @content_section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@content_section.errors.count, "error") %> prohibited this content_section from being saved:</h2>
+
+      <ul>
+      <% @content_section.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contentable_id %><br />
+    <%= f.number_field :contentable_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contentable_type %><br />
+    <%= f.text_field :contentable_type %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

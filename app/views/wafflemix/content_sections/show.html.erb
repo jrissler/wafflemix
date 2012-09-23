@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Contentable:</b>
+  <%= @content_section.contentable_id %>
+</p>
+
+<p>
+  <b>Contentable type:</b>
+  <%= @content_section.contentable_type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @content_section.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @content_section.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_content_section_path(@content_section) %> |
+<%= link_to 'Back', content_sections_path %>
