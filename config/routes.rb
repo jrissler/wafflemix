@@ -1,8 +1,4 @@
 Wafflemix::Engine.routes.draw do
-  resources :content_sections
-
-  resources :slides
-
   mount Mercury::Engine => '/'
 
   resources :pages, :only => [:index, :show, :home] do
@@ -18,6 +14,8 @@ Wafflemix::Engine.routes.draw do
     resources :roles
     resources :assets
     resources :categories
+    resources :content_sections
+    resources :slides
   end
 
   devise_for :users, {

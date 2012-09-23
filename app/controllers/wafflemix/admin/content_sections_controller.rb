@@ -1,47 +1,38 @@
 require_dependency "wafflemix/application_controller"
 
 module Wafflemix
-  class ContentSectionsController < ApplicationController
-    # GET /content_sections
-    # GET /content_sections.json
+  class Admin::ContentSectionsController < ApplicationController
     def index
       @content_sections = ContentSection.all
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html
         format.json { render json: @content_sections }
       end
     end
   
-    # GET /content_sections/1
-    # GET /content_sections/1.json
     def show
       @content_section = ContentSection.find(params[:id])
   
       respond_to do |format|
-        format.html # show.html.erb
+        format.html
         format.json { render json: @content_section }
       end
     end
-  
-    # GET /content_sections/new
-    # GET /content_sections/new.json
+ 
     def new
       @content_section = ContentSection.new
   
       respond_to do |format|
-        format.html # new.html.erb
+        format.html
         format.json { render json: @content_section }
       end
     end
-  
-    # GET /content_sections/1/edit
+
     def edit
       @content_section = ContentSection.find(params[:id])
     end
-  
-    # POST /content_sections
-    # POST /content_sections.json
+
     def create
       @content_section = ContentSection.new(params[:content_section])
   
@@ -55,9 +46,7 @@ module Wafflemix
         end
       end
     end
-  
-    # PUT /content_sections/1
-    # PUT /content_sections/1.json
+
     def update
       @content_section = ContentSection.find(params[:id])
   
@@ -71,9 +60,7 @@ module Wafflemix
         end
       end
     end
-  
-    # DELETE /content_sections/1
-    # DELETE /content_sections/1.json
+
     def destroy
       @content_section = ContentSection.find(params[:id])
       @content_section.destroy

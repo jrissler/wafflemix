@@ -13,6 +13,10 @@ start dummy app with: rails server
 
 2. config/routes.rb - add: mount Wafflemix::Engine => "/"
 
+= Migrate Datebase
+
+  rake wafflemix:install:migrations
+
 = Devise
 
 1. Ensure you have defined default url options in your environments files. Here
