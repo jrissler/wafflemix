@@ -11,7 +11,7 @@ gem 'formtastic', '~> 2.2.1'
 gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
 gem 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch => 'master'
 
-gem 'mercury-rails'
+gem 'mercury-rails', :git => 'https://github.com/jejacks0n/mercury.git', :ref => 'e220627d6b71e0eed0cdb15cf0a54f485ae073d9'
 gem 'devise', '2.0.4'
 gem 'ancestry', '1.3.0'
 
