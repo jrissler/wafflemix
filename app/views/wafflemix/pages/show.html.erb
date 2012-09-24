@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1><span id="page_title" class="mercury-region" data-mercury="full"><%= raw @page.title %></span></h1>
-<div id="page_body" class="mercury-region" data-mercury="full">
+<div id="content_section_Body" class="mercury-region" data-mercury="full">
   <%= raw @page.content_parts.content_for('Body') %>
 </div>
 <p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_page_path(@page.id)} %></p>

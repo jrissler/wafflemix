@@ -6,6 +6,7 @@
     <title>Mercury Editor</title>
     <%= stylesheet_link_tag    'mercury' %>
     <%= javascript_include_tag 'jquery-1.7', 'mercury' %>
+    <%= javascript_include_tag 'page_editor' %>
   </head>
   <body>
     <script type="text/javascript">
@@ -14,10 +15,11 @@
 
       // Instantiate the PageEditor
       new Mercury.PageEditor(saveUrl, {
-        saveStyle:  'form', // 'form', or 'json' (default json)
+        saveStyle: 'form', // 'form', or 'json' (default json)
         saveMethod: 'POST', // 'PUT', or 'POST', (create, vs. update -- default PUT)
-        visible:    true  // boolean - if the interface should start visible or not
+        visible: true // boolean - if the interface should start visible or not
       });
     </script>
+
   </body>
 </html>
