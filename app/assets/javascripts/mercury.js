@@ -464,4 +464,5 @@ window.Mercury = {
       window.location.href = window.location.href.replace(/\/editor\//i, '/');
     });
   }
+
 };
