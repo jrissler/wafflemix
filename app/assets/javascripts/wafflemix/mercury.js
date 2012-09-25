@@ -13,6 +13,7 @@
  * require mercury/support/history
  *
  * Require Mercury Editor itself.
+ *= require mercury/toolbar
  *= require mercury/mercury
  *
  * Require any localizations you wish to support
