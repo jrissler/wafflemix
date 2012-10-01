@@ -14,8 +14,8 @@
       <td><%= user.username %></td>
       <td><%= user.email %></td>
       <td>
-        <%= link_to 'Edit', [:edit, :Admins, user], :class => 'btn btn-primary btn-small' %>
-        <%= link_to 'Delete', [:Admins, user], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+        <%= link_to 'Edit', [:edit, :admin, user], :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'Delete', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
       </td>
     </tr>
     <% end %>

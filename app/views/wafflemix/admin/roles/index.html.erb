@@ -12,8 +12,8 @@
       <tr>
         <td><%= role.name %></td>
         <td>
-          <%= link_to 'Edit', [:edit, :Admins, role], :class => 'btn btn-primary btn-small' %>
-          <%= link_to 'Destroy', [:Admins, role], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+          <%= link_to 'Edit', [:edit, :admin, role], :class => 'btn btn-primary btn-small' %>
+          <%= link_to 'Destroy', [:admin, role], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
         </td>
       </tr>
     <% end %>
