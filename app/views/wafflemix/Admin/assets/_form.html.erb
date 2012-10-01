@@ -1,4 +1,4 @@
-<%= form_for([:admin, @asset]) do |f| %>
+<%= form_for([:Admins, @asset]) do |f| %>
   <% if @asset.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>

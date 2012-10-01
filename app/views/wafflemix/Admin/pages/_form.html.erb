@@ -1,4 +1,4 @@
-<%= semantic_form_for [:admin, @page] do |f| %>
+<%= semantic_form_for [:Admins, @page] do |f| %>
 
     <%= f.inputs :name => "Basic" do %>
       <%= f.input :title %>
@@ -19,7 +19,7 @@
           <%= f.fields_for :content_parts, content_part do |cp| %>
             <div class="tab-pane <%= content_part == @page.content_parts.first ? 'active' : 'not_active' %>" id="<%= content_part.name.downcase.gsub(' ', '-') %>">
               <%= cp.input :content %>
-              <p><%= link_to "<i class='icon-remove'></i> Delete This Content Section".html_safe, [:admin, content_part], confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger btn-small', :remote => true %></p>
+              <p><%= link_to "<i class='icon-remove'></i> Delete This Content Section".html_safe, [:Admins, content_part], confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger btn-small', :remote => true %></p>
             </div>
           <% end %>
         <% end %>

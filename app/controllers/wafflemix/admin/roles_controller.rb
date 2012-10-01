@@ -41,7 +41,7 @@ module Wafflemix
 
       respond_to do |format|
         if @role.save
-          format.html { redirect_to [:admin, @role], notice: 'Role was successfully created.' }
+          format.html { redirect_to [:Admins, @role], notice: 'Role was successfully created.' }
           format.json { render json: @role, status: :created, location: @role }
         else
           format.html { render action: "new" }
@@ -55,7 +55,7 @@ module Wafflemix
 
       respond_to do |format|
         if @role.update_attributes(params[:role])
-          format.html { redirect_to [:admin, @role], notice: 'Role was successfully updated.' }
+          format.html { redirect_to [:Admins, @role], notice: 'Role was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }

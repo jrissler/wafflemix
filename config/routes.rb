@@ -6,7 +6,7 @@ Wafflemix::Engine.routes.draw do
   end
   resources :images
 
-  namespace :admin do
+  namespace :Admins do
     resources :pages do
       collection { post :sort }
     end

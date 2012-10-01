@@ -41,7 +41,7 @@ module Wafflemix
   
       respond_to do |format|
         if @asset.save
-          format.html { redirect_to [:admin, @asset], notice: 'Asset was successfully created.' }
+          format.html { redirect_to [:Admins, @asset], notice: 'Asset was successfully created.' }
           format.json { render json: @asset, status: :created, location: @asset }
         else
           format.html { render action: "new" }
@@ -55,7 +55,7 @@ module Wafflemix
   
       respond_to do |format|
         if @asset.update_attributes(params[:asset])
-          format.html { redirect_to [:admin, @asset], notice: 'Asset was successfully updated.' }
+          format.html { redirect_to [:Admins, @asset], notice: 'Asset was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }

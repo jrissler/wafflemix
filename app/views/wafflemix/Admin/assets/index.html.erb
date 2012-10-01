@@ -18,9 +18,9 @@
         <td><%= asset.asset_mime_type %></td>
         <td><%= asset.asset_file_size %></td>
         <td>
-          <%= link_to 'Edit', [:edit, :admin, asset], :class => 'btn btn-primary btn-small' %>
-          <%= link_to 'View', [:admin, asset], :class => 'btn btn-success btn-small' %>
-          <%= link_to 'Destroy', [:admin, asset], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+          <%= link_to 'Edit', [:edit, :Admins, asset], :class => 'btn btn-primary btn-small' %>
+          <%= link_to 'View', [:Admins, asset], :class => 'btn btn-success btn-small' %>
+          <%= link_to 'Destroy', [:Admins, asset], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
         </td>
       </tr>
     <% end %>
