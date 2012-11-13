@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  published_at: 2012-11-13 08:12:39
+  link_url: MyString
+  draft: MyString
+
+two:
+  published_at: 2012-11-13 08:12:39
+  link_url: MyString
+  draft: MyString

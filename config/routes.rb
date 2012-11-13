@@ -4,6 +4,9 @@ Wafflemix::Engine.routes.draw do
   resources :pages, :only => [:index, :show, :home] do
     member { post :mercury_update }
   end
+
+  resources :posts, :only => [:index, :show]
+
   resources :images
 
   namespace :admin do
@@ -18,6 +21,7 @@ Wafflemix::Engine.routes.draw do
     resources :assets
     resources :categories
     resources :content_sections
+    resources :posts
   end
 
   devise_for :users, {
