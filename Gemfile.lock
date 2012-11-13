@@ -168,11 +168,6 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     ruby-hmac (0.4.0)
-    s3_direct_upload (0.0.1)
-      coffee-rails (~> 3.2.1)
-      jquery-fileupload-rails (~> 0.3.4)
-      rails (~> 3.2)
-      sass-rails (~> 3.2.1)
     sass (3.2.0)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -208,10 +203,10 @@ DEPENDENCIES
   formtastic-bootstrap!
   globalize3!
   haml-rails
+  jquery-fileupload-rails
   jquery-rails
   mercury-rails!
   pg (~> 0.14.0)
-  s3_direct_upload
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   wafflemix!

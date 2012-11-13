@@ -10,4 +10,6 @@
 //= require bootstrap-dropdown
 //= require bootstrap-tab
 //= require wafflemix/admin/jquery.nested_sortable
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require wafflemix/admin/admin

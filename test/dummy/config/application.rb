@@ -55,10 +55,10 @@ module Dummy
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.middleware.insert 0, 'Dragonfly::Middleware', :images
-
     #mainly for devise views to load from our engine
     config.railties_order = [Wafflemix::Engine, :main_app, :all]
+
+    config.middleware.insert 1, 'Dragonfly::Middleware', :images
   end
 end
 

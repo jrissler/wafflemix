@@ -38,9 +38,11 @@ module Wafflemix
 
     def create
       @asset = Asset.new(params[:asset])
+      @i = app.fetch_url('http://newrailsbits.s3.amazonaws.com/uploads/1e833d54c5b60c01f50efe238d7caea7/blank.png')
   
       respond_to do |format|
         if @asset.save
+          format.js
           format.html { redirect_to [:admin, @asset], notice: 'Asset was successfully created.' }
           format.json { render json: @asset, status: :created, location: @asset }
         else

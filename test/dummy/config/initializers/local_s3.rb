@@ -1,3 +1,3 @@
-ENV['S3_BUCKET'] = 'your-bucket'
-ENV['S3_KEY'] = 'your-key'
-ENV['S3_SECRET'] = 'your-secret'
+ENV['S3_BUCKET'] = 'newrailsbits'
+ENV['S3_KEY'] = 'AKIAISBYMY6Y4XCFLRCQ'
+ENV['S3_SECRET'] = 'xqSNa6XQEvohbJAmsGcmfb/tntq8FFaPyRvt8I3O'
