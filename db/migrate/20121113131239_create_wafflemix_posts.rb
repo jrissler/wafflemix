@@ -7,12 +7,9 @@ class CreateWafflemixPosts < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    Wafflemix::Post.create_translation_table! :title => :string, :body => :text
   end
 
   def down
     drop_table :wafflemix_posts
-    Wafflemix::Post.drop_translation_table!
   end
 end
