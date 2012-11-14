@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "wafflemix/admin/admin", :media => "all" %>
   <%= javascript_include_tag "wafflemix/admin/admin_js" %>
   <%= csrf_meta_tags %>
+  <%= yield :custom_js %>
 </head>
 <body>
   <%= top_nav %>

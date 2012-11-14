@@ -1,0 +1,37 @@
+<div class="span9">
+  <div class='page-header'>
+    <h1>Posts</h1>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Link Url</th>
+      <th>Published at</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.link_url %></td>
+      <td><%= post.published_at %></td>
+      <td>
+        <%= link_to 'Edit', [:edit, :admin, post], :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'Delete', [:admin, post], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="span3">
+  <div class='page-header'>
+    <h1>Options</h1>
+  </div>
+  <ul class="nav nav-tabs nav-stacked">
+    <li><%= link_to 'Add a Post', new_admin_post_path %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+  </ul>
+</div>

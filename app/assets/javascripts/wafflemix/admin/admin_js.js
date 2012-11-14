@@ -12,4 +12,5 @@
 //= require wafflemix/admin/jquery.nested_sortable
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require wafflemix/admin/bootstrap-datepicker
 //= require wafflemix/admin/admin

@@ -1,27 +1,24 @@
-<h1>Listing posts</h1>
+<h1>Blog</h1>
 
-<table>
-  <tr>
-    <th>Published at</th>
-    <th>Link url</th>
-    <th>Draft</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="span8">
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.published_at %></td>
-    <td><%= post.link_url %></td>
-    <td><%= post.draft %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="article post">
+    <h2><%= post.title %></h2>
+    <% if post.published_at %>
+      <p class="published_on"><%= post.published_at.to_date.to_formatted_s(:long_ordinal) %></p>
+    <% end %>
+    <p class="post_content"><%= post.body.html_safe if !post.body.blank? %></p>
+    <p class="read_more"><%= link_to 'read more', post %></p>
+  </div>
 <% end %>
-</table>
+</div>
 
-<br />
-
-<%= link_to 'New Post', new_post_path %>
+<div class="span3">
+  <h3>Sidebar</h3>
+  <h4>Categories</h4>
+  <ul class="sidebar_section">
+    <% ::Wafflemix::Category.all.each do |category| %>
+      <%= link_to category.name, wafflemix.category_path(category) %>
+    <% end %>
+  </ul>
+</div>

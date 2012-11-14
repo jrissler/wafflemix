@@ -11,8 +11,10 @@
   <div class="container-fluid container">
     <%= main_subnav %>
     <div class="row-fluid">
-      <%= main_menu(@menu_items) %>
-      <%= yield %>
+      <div class="span12">
+        <%= main_menu(@menu_items) %>
+        <%= yield %>
+      </div>
     </div>
   </div>
 </body>

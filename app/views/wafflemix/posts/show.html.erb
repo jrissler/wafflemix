@@ -1,20 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Published at:</b>
-  <%= @post.published_at %>
-</p>
+<div class="post">
+  <h1><span id="post_title" class="mercury-region" data-mercury="full"><%= raw @post.title %></span></h1>
+  <% if @post.published_at %>
+    <p class="published_on"><%= @post.published_at.to_date.to_formatted_s(:long_ordinal) %></p>
+  <% end %>
+  <div id="post_body" class="mercury-region" data-mercury="full">
+    <%= raw @post.body %>
+  </div>
+  <% if current_user %>
+    <br />
+    <p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_post_path(@post.id)} %></p>
+  <% end %>
+</div>
 
-<p>
-  <b>Link url:</b>
-  <%= @post.link_url %>
-</p>
 
-<p>
-  <b>Draft:</b>
-  <%= @post.draft %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

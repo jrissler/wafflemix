@@ -1,29 +1,36 @@
-<h1>Listing categories</h1>
+<div class="span9">
+  <div class='page-header'>
+    <h1>Categories</h1>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>Categorical</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
 
-<table>
-  <tr>
-    <th>Categorical</th>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Ancestry</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.categorical %></td>
+      <td><%= category.name %></td>
+      <td>
+        <%= link_to 'Edit', [:edit, :admin, category], :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'Delete', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
 
-<% @categories.each do |category| %>
-  <tr>
-    <td><%= category.categorical %></td>
-    <td><%= category.name %></td>
-    <td><%= category.position %></td>
-    <td><%= category.ancestry %></td>
-    <td><%= link_to 'Show', [:admin, category] %></td>
-    <td><%= link_to 'Edit', [:edit, :admin, category] %></td>
-    <td><%= link_to 'Destroy', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="span3">
+  <div class='page-header'>
+    <h1>Options</h1>
+  </div>
+  <ul class="nav nav-tabs nav-stacked">
+    <li><%= link_to 'Add a Category', new_admin_category_path %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+  </ul>
+</div>
 
-<br />
-
-<%= link_to 'New Category', new_admin_category_path %>

@@ -5,9 +5,12 @@ Wafflemix::Engine.routes.draw do
     member { post :mercury_update }
   end
 
-  resources :posts, :only => [:index, :show]
+  resources :posts, :only => [:index, :show] do
+    member { post :mercury_update }
+  end
 
   resources :images
+  resources :categories
 
   namespace :admin do
     resources :pages do
