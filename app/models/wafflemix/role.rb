@@ -4,7 +4,7 @@ module Wafflemix
 
     validates_uniqueness_of :name
 
-    has_many :wafflemix_users, :class_name => 'Wafflemix::User'
-    has_many :users, :through => :wafflemix_users
+    has_many :wafflemix_user_roles, :class_name => 'Wafflemix::UserRole'
+    has_many :users, :through => :wafflemix_user_roles, :class_name => 'Wafflemix::User'
   end
 end

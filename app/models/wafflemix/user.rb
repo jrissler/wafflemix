@@ -5,7 +5,7 @@ module Wafflemix
 
     devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
-    has_many :wafflemix_roles, :class_name => 'Wafflemix::Role'
-    has_many :roles, :through => :wafflemix_roles
+    has_many :wafflemix_user_roles, :class_name => 'Wafflemix::UserRole'
+    has_many :roles, :through => :wafflemix_user_roles, :class_name => 'Wafflemix::Role'
   end
 end
