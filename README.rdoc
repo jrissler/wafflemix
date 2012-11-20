@@ -71,6 +71,22 @@ And for heroku (by default production):
 
 heroku config:add S3_KEY=***your-s3-key*** S3_SECRET=***your-s3-secret*** S3_BUCKET=***your-bucket***
 
+= Overriding routes
+
+Overriding routes is straightforward, in config/routes add:
+
+  Wafflemix::Engine.routes.draw do
+
+  end
+
+Add any routes you want to override inside this block.
+
+For example, changing the root url:
+
+  Wafflemix::Engine.routes.draw do
+    root :to => "posts#index"
+  end
+
 ##Todo's
 New app generators
 Instructions for S3 config
