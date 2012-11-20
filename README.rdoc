@@ -9,13 +9,15 @@ start dummy app with: rails server
 
 = Using as an engine + settig up new application
 
-1. config/application.rb - add to bottom: config.railties_order = [:main_app, Wafflemix::Engine, :all]
+1. Add wafflemix to your gemfile - gem 'wafflemix', :git => 'git://github.com/jrissler/wafflemix.git'
 
-2. config/routes.rb - add: mount Wafflemix::Engine => "/"
+2. config/application.rb - add require "wafflemix" below bundle method.
 
-= Migrate Datebase
+3. config/routes.rb - add: mount Wafflemix::Engine => "/"
 
-  rake wafflemix:install:migrations
+4. rake wafflemix:install:migrations
+
+5. rake db:migrate
 
 = Devise
 
