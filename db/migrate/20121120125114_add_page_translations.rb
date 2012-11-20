@@ -1,6 +1,6 @@
 class AddPageTranslations < ActiveRecord::Migration
   def up
-    Wafflemix::Page.create_translation_table! :title => :string, :body => :text
+    Wafflemix::Page.create_translation_table! :title => :string
   end
 
   def down
