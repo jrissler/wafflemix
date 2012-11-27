@@ -12,7 +12,11 @@ module Wafflemix
     end
 
     def show
-      @page = Page.find_by_link_url(params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
+      if params[:id]
+        @page = Page.find_by_link_url(params[:id])
+      else
+        @page = Page.find_by_link_url(params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
+      end
 
       respond_to do |format|
         format.html
