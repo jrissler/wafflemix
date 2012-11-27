@@ -15,7 +15,7 @@ module Wafflemix
     end
 
     def show
-      @page = Page.find(params[:id])
+      @page = Page.find_by_link_url(params[:id])
 
       respond_to do |format|
         format.html
@@ -33,7 +33,7 @@ module Wafflemix
     end
 
     def edit
-      @page = Page.find(params[:id])
+      @page = Page.find_by_link_url(params[:id])
     end
 
     def create
@@ -51,7 +51,7 @@ module Wafflemix
     end
 
     def update
-      @page = Page.find(params[:id])
+      @page = Page.find_by_link_url(params[:id])
 
       respond_to do |format|
         if @page.update_attributes(params[:page])
@@ -65,7 +65,7 @@ module Wafflemix
     end
 
     def destroy
-      @page = Page.find(params[:id])
+      @page = Page.find_by_link_url(params[:id])
       @page.destroy
 
       respond_to do |format|

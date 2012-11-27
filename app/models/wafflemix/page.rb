@@ -16,8 +16,15 @@ module Wafflemix
       attr_accessible :title, :locale
     end
 
+    before_save :convert_to_safe_url
+
     def to_param
-      link_url
+      link_url.gsub('/', '')
+    end
+
+    def convert_to_safe_url
+      safe_url = self.link_url.gsub('/','')
+      self.link_url = safe_url
     end
   end
 end

@@ -15,7 +15,7 @@ module Wafflemix
       if params[:id]
         @page = Page.find(params[:id])
       else
-        @page = Page.find_by_link_url('/' + params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
+        @page = Page.find_by_link_url(params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
       end
 
       respond_to do |format|
@@ -24,7 +24,7 @@ module Wafflemix
     end
 
     def home
-      @page = Page.find_by_link_url("/")
+      @page = Page.find_by_link_url("home")
 
       respond_to do |format|
         format.html
