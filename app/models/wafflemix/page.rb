@@ -18,12 +18,18 @@ module Wafflemix
 
     before_save :convert_to_safe_url
 
+    validates_presence_of :title
+
     def to_param
       link_url.gsub('/', '')
     end
 
     def convert_to_safe_url
-      safe_url = self.link_url.gsub('/','')
+      if !self.link_url.blank?
+        safe_url = self.link_url.gsub('/','').parameterize
+      else
+        safe_url = self.title.parameterize
+      end
       self.link_url = safe_url
     end
   end
