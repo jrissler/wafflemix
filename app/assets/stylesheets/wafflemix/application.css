@@ -11,4 +11,5 @@
  *= require_self
  *= require formtastic-bootstrap
  *= require wafflemix/main
+ *= require wafflemix/clearfix
  */
