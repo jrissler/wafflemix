@@ -15,5 +15,9 @@ module Wafflemix
     class Translation
       attr_accessible :title, :locale
     end
+
+    def to_param
+      "#{link_url}"
+    end
   end
 end
