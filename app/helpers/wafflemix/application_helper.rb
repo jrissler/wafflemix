@@ -51,6 +51,7 @@ module Wafflemix
         t += content_tag(:li, link_to('Logout', destroy_user_session_path, :method => :delete))
       else
         t += content_tag(:li, link_to('Login', new_user_session_path))
+      end
       t += content_tag(:li, link_to('Customize', '#'))
     end
 
