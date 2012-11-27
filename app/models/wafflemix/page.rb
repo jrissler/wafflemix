@@ -17,7 +17,7 @@ module Wafflemix
     end
 
     def to_param
-      "#{link_url}"
+      link_url
     end
   end
 end
