@@ -37,6 +37,7 @@ module Wafflemix
       params[:content].each do |key, value|
         if key =~ /content_section/
           section = key.gsub('content_section_','')
+          section = key.gsub /(content_section_|_)/, "content_section_" => "", "_" => " "
           content_to_update = page.content_parts.find_by_name(section)
           content_to_update.content = value[:value]
           content_to_update.save
