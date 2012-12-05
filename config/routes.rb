@@ -6,7 +6,8 @@ Wafflemix::Engine.routes.draw do
   end
 
   resources :posts, :only => [:index, :show] do
-    member { post :mercury_update }
+    post :mercury_update, :on => :member
+    get :tagged, :on => :member
   end
 
   resources :images

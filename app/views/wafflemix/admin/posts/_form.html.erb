@@ -5,6 +5,10 @@
     <%= f.input :title %>
   <% end %>
 
+  <%= f.inputs :name => "Categories & Tags" do %>
+    <%= f.input :tag_list %>
+  <% end %>
+
   <%= f.inputs :name => "Advanced" do %>
     <%= f.input :link_url %>
     <%= f.input :published_at, :as => :string %>
