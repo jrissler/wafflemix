@@ -14,6 +14,7 @@ gem 'globalize3', :git => 'git://github.com/svenfuchs/globalize3.git', :branch =
 gem 'mercury-rails', :git => 'https://github.com/jejacks0n/mercury.git', :ref => 'e220627d6b71e0eed0cdb15cf0a54f485ae073d9'
 gem 'devise', '2.0.4'
 gem 'ancestry', '1.3.0'
+gem 'acts-as-taggable-on', '~> 2.3.1'
 
 #image handling
 gem 'dragonfly'
