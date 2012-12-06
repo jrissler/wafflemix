@@ -7,6 +7,7 @@ require "formtastic-bootstrap"
 require "ancestry"
 require "globalize3"
 require "haml-rails"
+require "acts-as-taggable-on"
 
 require 'haml'
 
