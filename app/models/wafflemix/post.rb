@@ -7,6 +7,9 @@ module Wafflemix
 
     default_scope  :order => 'published_at ASC'
 
+    has_many :categoricals, :as => :categorical
+    has_many :categories, :through => :categoricals
+
     translates :title, :body
 
     class Translation
