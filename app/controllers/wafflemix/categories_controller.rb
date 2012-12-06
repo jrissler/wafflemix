@@ -15,7 +15,6 @@ module Wafflemix
     def show
       @category = Category.find(params[:id])
       @posts = @category.posts
-      @tags = @posts.tags
 
       respond_to do |format|
         format.html

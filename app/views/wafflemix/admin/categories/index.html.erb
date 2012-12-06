@@ -4,15 +4,15 @@
   </div>
   <table class="table table-striped">
     <tr>
-      <th>Categorical</th>
       <th>Name</th>
+      <th>Times been used</th>
       <th>Actions</th>
     </tr>
 
     <% @categories.each do |category| %>
     <tr>
-      <td><%= category.categorical %></td>
       <td><%= category.name %></td>
+      <td><%= category.categoricals.size %></td>
       <td>
         <%= link_to 'Edit', [:edit, :admin, category], :class => 'btn btn-primary btn-small' %>
         <%= link_to 'Delete', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>

@@ -6,6 +6,7 @@
   <% end %>
 
   <%= f.inputs :name => "Categories & Tags" do %>
+    <%= f.input :categories, :as => :check_boxes, :collection => ::Wafflemix::Category.all %>
     <%= f.input :tag_list %>
   <% end %>
 
