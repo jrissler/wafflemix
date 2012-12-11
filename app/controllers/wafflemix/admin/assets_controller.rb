@@ -38,7 +38,7 @@ module Wafflemix
 
     def create
       @asset = Asset.new(params[:asset])
-      @i = app.fetch_url('http://newrailsbits.s3.amazonaws.com/uploads/1e833d54c5b60c01f50efe238d7caea7/blank.png')
+      @asset.asset_origin = params[:image_url]
   
       respond_to do |format|
         if @asset.save

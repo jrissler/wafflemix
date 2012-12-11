@@ -23,7 +23,7 @@
 
 
 <h2>Upload file</h2>
-<%= s3_uploader_form post: admin_assets_path, as: "slider[image_url]", :resource_type => @slide.class.to_s, :resource_id => @slide.id do %>
+<%= s3_uploader_form post: admin_assets_path, as: "image_url", :resource_type => @slide.class.to_s, :resource_id => @slide.id do %>
   <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
 
     <!-- The fileinput-button span is used to style the file input field as button -->
@@ -38,7 +38,10 @@
 <script id="template-upload" type="text/x-tmpl">
   <div class="upload">
     {%=o.name%}
-    <div class="progress"><div class="bar" style="width: 0%"></div></div>
+    <div class="progress">
+      <div class="bar" style="width: 0%">
+      </div>
+    </div>
   </div>
 </script>
 
