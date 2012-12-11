@@ -12,17 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :asset_uid %><br />
-    <%= f.text_field :asset_uid %>
+    <%= f.label :asset %><br />
+    <%= f.file_field :asset %>
   </div>
-  <div class="field">
-    <%= f.label :asset_mime_type %><br />
-    <%= f.text_field :asset_mime_type %>
-  </div>
-  <div class="field">
-    <%= f.label :asset_file_size %><br />
-    <%= f.number_field :asset_file_size %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

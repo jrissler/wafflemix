@@ -1,5 +1,5 @@
 require 'dragonfly'
-app = Dragonfly[:images]
+app = Dragonfly[:waffle_assets]
 
 app.configure_with(:imagemagick)
 app.configure_with(:rails)

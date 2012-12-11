@@ -13,8 +13,8 @@ module Wafflemix
         "name" => read_attribute(:asset_name),
         "size" => asset_size,
         "url" => asset_url,
-        "thumbnail_url" => asset.url,
-        "delete_url" => Wafflemix::Engine::routes.url_helpers.root_path,
+        "thumbnail_url" => asset.thumb('80x80#').url,
+        "delete_url" => Wafflemix::Engine::routes.url_helpers.admin_asset_path(:id => id),
         "delete_type" => "DELETE"
       }
     end

@@ -58,7 +58,7 @@ module Dummy
     #mainly for devise views to load from our engine
     config.railties_order = [Wafflemix::Engine, :main_app, :all]
 
-    config.middleware.insert 1, 'Dragonfly::Middleware', :images
+    config.middleware.insert 1, 'Dragonfly::Middleware', :waffle_assets
   end
 end
 
