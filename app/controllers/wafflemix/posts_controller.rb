@@ -2,6 +2,7 @@ require_dependency "wafflemix/application_controller"
 
 module Wafflemix
   class PostsController < ApplicationController
+    before_filter :find_page
 
     def index
       @posts = Post.all
@@ -39,6 +40,11 @@ module Wafflemix
         format.json { render json: @posts }
       end
     end
+    
+    private
+      def find_page
+        @page = Page.find_by_title("Blog")
+      end
 
   end
 end
