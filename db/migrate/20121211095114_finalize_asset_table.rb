@@ -5,7 +5,7 @@ class FinalizeAssetTable < ActiveRecord::Migration
     add_column :wafflemix_assets, :asset_uid, :string
     add_column :wafflemix_assets, :asset_size, :integer
 
-    remove_column :wafflemix_assets, :assetable_type, :string
-    remove_column :wafflemix_assets, :assetable_id, :integer
+    remove_column :wafflemix_assets, :assetable_type
+    remove_column :wafflemix_assets, :assetable_id
   end
 end
