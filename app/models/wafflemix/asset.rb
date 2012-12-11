@@ -9,8 +9,8 @@ module Wafflemix
     private
       def store_image_info
         if self.asset_origin
-          self.asset_mime_type = remote_asset.mime_type
-          self.asset_size = remote_asset.size
+          self.asset_mime_type = self.asset.mime_type
+          self.asset_size = self.asset.size
           self.save
         end
       end
