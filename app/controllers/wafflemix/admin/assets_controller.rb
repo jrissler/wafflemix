@@ -39,7 +39,8 @@ module Wafflemix
     def create
       @asset = Asset.new(params[:asset])
       @asset.asset_origin = params[:image_url]
-  
+      @asset.asset_url = params[:image_url]
+
       respond_to do |format|
         if @asset.save
           format.js
