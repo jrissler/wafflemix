@@ -10,7 +10,7 @@ module Wafflemix
   
       respond_to do |format|
         format.html
-        format.json { render json: @assets }
+        format.json { render :json => @assets.collect { |p| p.to_jq_upload }.to_json }
       end
     end
 
@@ -38,18 +38,19 @@ module Wafflemix
 
     def create
       @asset = Asset.new(params[:asset])
-      @asset.asset_origin = params[:image_url]
-      @asset.asset_url = params[:image_url]
-
-      respond_to do |format|
-        if @asset.save
-          format.js
-          format.html { redirect_to [:admin, @asset], notice: 'Asset was successfully created.' }
-          format.json { render json: @asset, status: :created, location: @asset }
-        else
-          format.html { render action: "new" }
-          format.json { render json: @asset.errors, status: :unprocessable_entity }
+      if @asset.save
+        respond_to do |format|
+          format.html {
+            render :json => [@asset.to_jq_upload].to_json,
+            :content_type => 'text/html',
+            :layout => false
+          }
+          format.json {
+            render :json => [@asset.to_jq_upload].to_json
+          }
         end
+      else
+        render :json => [{:error => "custom_failure"}], :status => 304
       end
     end
 
