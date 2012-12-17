@@ -3,7 +3,7 @@ app = Dragonfly[:waffle_assets]
 
 app.configure_with(:imagemagick)
 app.configure_with(:rails)
-if Rails.env.production?
+if ENV['S3_BUCKET']
   app.configure do |c|
     c.datastore = Dragonfly::DataStorage::S3DataStore.new(
       :bucket_name => ENV['S3_BUCKET'],
