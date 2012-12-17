@@ -273,8 +273,8 @@ window.Mercury = {
       enabled: true,
       allowedMimeTypes: ['image/jpeg', 'image/gif', 'image/png'],
       maxFileSize: 1235242880,
-      inputName: 'image[image]',
-      url: '/mercury/images',
+      inputName: 'asset[asset]',
+      url: '/assets',
       handler: false
       },
 

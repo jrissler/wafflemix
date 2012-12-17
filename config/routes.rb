@@ -10,7 +10,7 @@ Wafflemix::Engine.routes.draw do
     get :tagged, :on => :member
   end
 
-  resources :images
+  resources :assets
   resources :categories
 
   namespace :admin do
