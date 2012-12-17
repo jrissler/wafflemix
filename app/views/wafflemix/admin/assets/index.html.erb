@@ -13,7 +13,7 @@
 
     <% @assets.each do |asset| %>
       <tr>
-        <th><%= image_tag asset.asset.remote_url if asset.asset_uid %></th>
+        <th><%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %></th>
         <td><%= asset.asset_name %></td>
         <td><%= asset.asset_mime_type %></td>
         <td><%= number_to_human_size(asset.asset_size) %></td>
