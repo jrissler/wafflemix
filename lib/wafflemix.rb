@@ -8,6 +8,7 @@ require "ancestry"
 require "globalize3"
 require "haml-rails"
 require "acts-as-taggable-on"
+require "american_date"
 
 require 'haml'
 

@@ -21,6 +21,7 @@ gem 'dragonfly'
 gem 'fog'
 
 gem 'haml-rails'
+gem 'american_date'
 
 gem 'jquery-fileupload-rails'
 
