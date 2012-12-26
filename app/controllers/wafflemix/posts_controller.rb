@@ -5,7 +5,7 @@ module Wafflemix
     before_filter :find_page
 
     def index
-      @posts = Post.all
+      @posts = Post.published
       @tags = Post.tag_counts_on(:tags)
   
       respond_to do |format|
@@ -33,7 +33,7 @@ module Wafflemix
     end
 
     def tagged
-      @posts = Post.tagged_with(params[:id])
+      @posts = Post.published.tagged_with(params[:id])
       @tags = @posts.tag_counts_on(:tags)
 
       respond_to do |format|

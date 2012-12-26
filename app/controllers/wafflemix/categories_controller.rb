@@ -6,6 +6,7 @@ module Wafflemix
 
     def index
       @categories = Category.all
+      @tags = Post.tag_counts_on(:tags)
 
       respond_to do |format|
         format.html
@@ -15,7 +16,8 @@ module Wafflemix
 
     def show
       @category = Category.find(params[:id])
-      @posts = @category.posts
+      @posts = @category.posts.published
+      @tags = Post.tag_counts_on(:tags)
 
       respond_to do |format|
         format.html

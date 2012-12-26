@@ -5,7 +5,7 @@ module Wafflemix
     acts_as_taggable
     ActsAsTaggableOn.force_parameterize = true
 
-    default_scope  :order => 'published_at ASC'
+    scope :published, lambda { where("published_at <= ? AND draft = ?", Time.zone.now, false) }
 
     has_many :categoricals, :as => :categorical
     has_many :categories, :through => :categoricals
