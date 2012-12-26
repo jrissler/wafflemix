@@ -2,7 +2,7 @@
 
 <div class="span8">
   <div class="article post">
-    <h1><span id="post_title" class="mercury-region" data-mercury="full"><%= raw @post.title %></span></h1>
+    <h2><span id="post_title" class="mercury-region" data-mercury="full"><%= raw @post.title %></span></h2>
     <% if @post.published_at %>
       <p class="published_on"><%= @post.published_at.to_date.to_formatted_s(:long_ordinal) %></p>
     <% end %>
