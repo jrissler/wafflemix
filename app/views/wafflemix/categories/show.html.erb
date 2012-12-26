@@ -13,11 +13,4 @@
 <% end %>
 </div>
 
-<div class="span3">
-  <h4>Categories</h4>
-  <ul class="sidebar_section">
-    <% ::Wafflemix::Category.all.each do |category| %>
-      <li><%= link_to category.name, wafflemix.category_path(category) %></li>
-    <% end %>
-  </ul>
-</div>
+<%= render :partial => 'wafflemix/posts/sidebar' %>

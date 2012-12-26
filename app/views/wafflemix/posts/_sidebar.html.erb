@@ -1,0 +1,12 @@
+<div class="span3">
+  <h4>Categories</h4>
+  <ul class="sidebar_section">
+    <% ::Wafflemix::Category.all.each do |category| %>
+      <li><%= link_to category.name, wafflemix.category_path(category) %></li>
+    <% end %>
+  </ul>
+  <h4>Tags</h4>
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, wafflemix.tagged_post_path(tag.name), :class => css_class %>
+  <% end %>
+</div>
