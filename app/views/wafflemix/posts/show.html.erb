@@ -1,16 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <div class="post">
-  <h1><span id="post_title" class="mercury-region" data-mercury="full"><%= raw @post.title %></span></h1>
-  <% if @post.published_at %>
-    <p class="published_on"><%= @post.published_at.to_date.to_formatted_s(:long_ordinal) %></p>
-  <% end %>
-  <div id="post_body" class="mercury-region" data-mercury="full">
-    <%= raw @post.body %>
+
+</div>
+
+<h1>Blog</h1>
+
+<div class="span8">
+  <div class="article post">
+    <h1><span id="post_title" class="mercury-region" data-mercury="full"><%= raw @post.title %></span></h1>
+    <% if @post.published_at %>
+      <p class="published_on"><%= @post.published_at.to_date.to_formatted_s(:long_ordinal) %></p>
+    <% end %>
+    <div id="post_body" class="mercury-region" data-mercury="full">
+      <%= raw @post.body %>
+    </div>
+    <% if current_user %>
+      <br />
+      <p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_post_path(@post.id)} %></p>
+    <% end %>
   </div>
-  <% if current_user %>
-    <br />
-    <p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_post_path(@post.id)} %></p>
+</div>
+
+<div class="span3">
+  <h3>Sidebar</h3>
+  <h4>Categories</h4>
+  <ul class="sidebar_section">
+    <% ::Wafflemix::Category.all.each do |category| %>
+      <%= link_to category.name, wafflemix.category_path(category) %>
+    <% end %>
+  </ul>
+  <h4>Tags</h4>
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, wafflemix.tagged_post_path(tag.name), :class => css_class %>
   <% end %>
 </div>
 

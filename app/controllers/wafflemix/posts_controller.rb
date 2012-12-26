@@ -16,6 +16,7 @@ module Wafflemix
 
     def show
       @post = Post.find(params[:id])
+      @tags = Post.tag_counts_on(:tags)
   
       respond_to do |format|
         format.html
