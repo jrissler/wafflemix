@@ -1,6 +1,6 @@
 class AddTranslationTableForPosts < ActiveRecord::Migration
   def up
-    Wafflemix::Post.create_translation_table! :title => :string, :body => :text
+    Wafflemix::Post.create_translation_table! :title => :string, :body => :text, :excerpt => :text
   end
 
   def down

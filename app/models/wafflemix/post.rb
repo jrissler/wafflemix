@@ -12,10 +12,10 @@ module Wafflemix
     has_many :categoricals, :as => :categorical
     has_many :categories, :through => :categoricals
 
-    translates :title, :body
+    translates :title, :body, :excerpt
 
     class Translation
-      attr_accessible :title, :body, :locale
+      attr_accessible :title, :body, :excerpt, :locale
     end
 
     validates_presence_of :title

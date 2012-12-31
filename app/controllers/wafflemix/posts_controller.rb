@@ -28,6 +28,7 @@ module Wafflemix
       post = Post.find(params[:id])
       post.title = params[:content][:post_title][:value]
       post.body = params[:content][:post_body][:value]
+      post.excerpt = params[:content][:post_excerpt][:value]
       post.save!
       render text: ""
     end
