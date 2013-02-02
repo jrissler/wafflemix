@@ -40,7 +40,7 @@ $(document).ready ->
       finalstring = finalstring + type + "[" + index + "]" + "[id]=" + id + "&" + type + "[" + index + "][parent_id]=" + parent_id + "&" + type + "[" + index + "][position]=" + index + "&"
     $.post($(this).data('update-url'), finalstring)
 
-  $('.add_content_link').live 'click', (event) ->
+  $('.add_content_link').on 'click', (event) ->
     if $('.add_content_link').hasClass('disabled')
       return false
     else
