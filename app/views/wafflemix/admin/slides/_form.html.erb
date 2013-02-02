@@ -21,6 +21,16 @@
   </div>
 <% end %>
 
+<ul id="droppable">
+
+</ul>
+
+<ul id="draggable">
+  <% ::Wafflemix::Asset.all.each do |asset| %>
+    <li><%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %></li>
+  <% end %>
+</ul>
+
 
 <h2><%= t('photos.title') %></h2>
 <%= form_for [:admin, ::Wafflemix::Asset.new], :html => { :multipart => true, :id => "fileupload", :method => 'post'  } do |f| %>

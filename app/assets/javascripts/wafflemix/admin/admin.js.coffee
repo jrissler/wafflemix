@@ -59,3 +59,9 @@ $(document).ready ->
         name: $('.add_content_part_input input').val()
     $('.add_content_part_input').remove();
     $('.add_content_link').removeClass('disabled')
+
+  $("#draggable li" ).draggable(revert: true, cursor: "move");
+
+  $("#droppable").droppable
+    drop: function( event, ui ) ->
+      alert("dropped")
