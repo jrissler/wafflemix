@@ -1,6 +1,6 @@
 module Wafflemix
   class Slide < ActiveRecord::Base
-    attr_accessible :name, :position, :parent_id
+    attr_accessible :name, :position, :parent_id, :slide_link, :content
 
     validates_presence_of :name
 

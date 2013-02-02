@@ -1,25 +1,18 @@
-<%= form_for [:admin, @slide] do |f| %>
-  <% if @slide.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
+<%= semantic_form_for [:admin, @slide] do |f| %>
 
-      <ul>
-      <% @slide.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :slide_link %>
+    <%= f.input :content %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :button %>
+    <%= link_to 'Cancel', admin_slides_path, :class => 'btn' %>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
 
 <h3>Slide Images</h3>
 <ul id="droppable">
