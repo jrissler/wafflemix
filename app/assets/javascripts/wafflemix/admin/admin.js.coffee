@@ -40,7 +40,7 @@ $(document).ready ->
       finalstring = finalstring + type + "[" + index + "]" + "[id]=" + id + "&" + type + "[" + index + "][parent_id]=" + parent_id + "&" + type + "[" + index + "][position]=" + index + "&"
     $.post($(this).data('update-url'), finalstring)
 
-  $('.add_content_link').on 'click', (event) ->
+  $(document).on "click", ".add_content_link", (event) ->
     if $('.add_content_link').hasClass('disabled')
       return false
     else
@@ -49,7 +49,7 @@ $(document).ready ->
       $('.add_content_link').tab('show');
       return false
 
-  $('#submit_content_part').on 'click', (event) ->
+  $(document).on "click", "#submit_content_part", (event) ->
     $.ajax
       url: '/admin/content_sections.js'
       type: 'POST'
