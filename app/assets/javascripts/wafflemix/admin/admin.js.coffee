@@ -49,7 +49,7 @@ $(document).ready ->
       $('.add_content_link').tab('show');
       return false
 
-  $('#submit_content_part').live 'click', (event) ->
+  $('#submit_content_part').on 'click', (event) ->
     $.ajax
       url: '/admin/content_sections.js'
       type: 'POST'
