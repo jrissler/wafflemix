@@ -6,7 +6,7 @@ module Wafflemix
 
     has_ancestry
 
-    has_many :asset_images, :as => :imageable
-    has_many :images, :through => :asset_images
+    has_many :images, :as => :imageable
+    has_many :assets, :through => :images
   end
 end

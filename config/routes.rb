@@ -10,7 +10,7 @@ Wafflemix::Engine.routes.draw do
     get :tagged, :on => :member
   end
 
-  resources :assets
+
   resources :categories
 
   namespace :admin do
@@ -26,6 +26,9 @@ Wafflemix::Engine.routes.draw do
     resources :categories
     resources :content_sections
     resources :posts
+    resources :assets do
+      collection { post :add_image }
+    end
   end
 
   devise_for :users, {

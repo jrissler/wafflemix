@@ -63,5 +63,11 @@ $(document).ready ->
   $("#draggable li" ).draggable(revert: true, cursor: "move");
 
   $("#droppable").droppable
-    drop: function( event, ui ) ->
-      alert("dropped")
+    drop: (event, ui) ->
+      $.ajax
+        url: '/admin/assets/add_image.js'
+        type: 'POST'
+        data:
+          resource: $(ui.draggable).data('resource')
+          resource_id: $(ui.draggable).data('resource-id')
+          asset_id: $(ui.draggable).data('asset-id')

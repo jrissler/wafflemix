@@ -77,5 +77,19 @@ module Wafflemix
         format.json { head :no_content }
       end
     end
+
+    def add_image
+      slide = params[:resource].constantize.find(params[:resource_id])
+      asset = Asset.find(params[:asset_id])
+
+      respond_to do |format|
+        if slide.assets << asset
+          format.js
+        else
+          format.js
+        end
+      end
+    end
+
   end
 end

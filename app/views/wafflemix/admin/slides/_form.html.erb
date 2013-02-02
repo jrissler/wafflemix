@@ -21,13 +21,20 @@
   </div>
 <% end %>
 
+<h3>Slide Images</h3>
 <ul id="droppable">
-
+  <% @slide.assets.each do |asset| %>
+    <li><%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %></li>
+  <% end %>
 </ul>
 
+<h3>Available Images</h3>
+<p>Drag to Slide Images to use an image.</p>
 <ul id="draggable">
   <% ::Wafflemix::Asset.all.each do |asset| %>
-    <li><%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %></li>
+    <%= content_tag "li", class: "add_image", data: {resource: @slide.class.to_s, resource_id: @slide.id, asset_id: asset.id} do %>
+      <%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %>
+    <% end %>
   <% end %>
 </ul>
 
