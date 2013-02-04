@@ -1,21 +1,21 @@
-<%= semantic_form_for [:admin, @slide] do |f| %>
+<%= semantic_form_for [:admin, @portfolio] do |f| %>
 
   <%= f.inputs do %>
     <%= f.input :name %>
-    <%= f.input :slide_link %>
+    <%= f.input :intro %>
     <%= f.input :content %>
   <% end %>
 
   <%= f.actions do %>
     <%= f.action :submit, :as => :button %>
-    <%= link_to 'Cancel', admin_slides_path, :class => 'btn' %>
+    <%= link_to 'Cancel', admin_portfolios_path, :class => 'btn' %>
   <% end %>
 
 <% end %>
 
 <h3>Slide Images</h3>
 <ul id="droppable">
-  <% @slide.assets.each do |asset| %>
+  <% @portfolio.assets.each do |asset| %>
     <li><%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %></li>
   <% end %>
 </ul>
@@ -24,11 +24,12 @@
 <p>Drag to Slide Images to use an image.</p>
 <ul id="draggable">
   <% ::Wafflemix::Asset.all.each do |asset| %>
-    <%= content_tag "li", class: "add_image", data: {resource: @slide.class.to_s, resource_id: @slide.id, asset_id: asset.id} do %>
+    <%= content_tag "li", class: "add_image", data: {resource: @portfolio.class.to_s, resource_id: @portfolio.id, asset_id: asset.id} do %>
       <%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %>
     <% end %>
   <% end %>
 </ul>
+
 
 <h2><%= t('photos.title') %></h2>
 <%= form_for [:admin, ::Wafflemix::Asset.new], :html => { :multipart => true, :id => "fileupload", :method => 'post'  } do |f| %>

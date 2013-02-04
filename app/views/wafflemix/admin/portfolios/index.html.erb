@@ -1,0 +1,21 @@
+<div class="span9">
+  <div class='page-header'>
+    <h1>Portfolio Items</h1>
+  </div>
+  <ul class="one_level_sortable" data-update-url="<%= sort_admin_portfolios_path %>">
+    <%= slide_tree_view(@slides) %>
+  </ul>
+</div>
+
+<div class="span3">
+  <div class='page-header'>
+    <h1>Options</h1>
+  </div>
+  <ul class="nav nav-tabs nav-stacked">
+    <li><%= link_to 'Add a Slide', new_admin_slide_path %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+  </ul>
+</div>

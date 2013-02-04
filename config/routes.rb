@@ -12,6 +12,7 @@ Wafflemix::Engine.routes.draw do
 
 
   resources :categories
+  resources :portfolios
 
   namespace :admin do
     resources :pages do
@@ -26,6 +27,7 @@ Wafflemix::Engine.routes.draw do
     resources :categories
     resources :content_sections
     resources :posts
+    resources :portfolios
     resources :assets do
       collection { post :add_image }
     end
