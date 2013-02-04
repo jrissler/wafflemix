@@ -5,7 +5,7 @@ module Wafflemix
 
     def index
       @portfolios = Portfolio.all
-      @page = Page.find_by_link_url('/portfolios')
+      @page = Page.find_by_link_url('portfolios')
   
       respond_to do |format|
         format.html
@@ -15,7 +15,7 @@ module Wafflemix
 
     def show
       @portfolio = Portfolio.find(params[:id])
-      @page = Page.find_by_link_url('/portfolios')
+      @page = Page.find_by_link_url('portfolios')
   
       respond_to do |format|
         format.html
