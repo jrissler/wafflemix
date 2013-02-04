@@ -19,7 +19,7 @@ Wafflemix::Engine.routes.draw do
       collection { post :sort }
     end
     resources :slides do
-      collection { post :sort}
+      collection { post :sort }
     end
     resources :users
     resources :roles
@@ -27,7 +27,9 @@ Wafflemix::Engine.routes.draw do
     resources :categories
     resources :content_sections
     resources :posts
-    resources :portfolios
+    resources :portfolios do
+      collection { post :sort }
+    end
     resources :assets do
       collection { post :add_image }
     end

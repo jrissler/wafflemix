@@ -3,6 +3,8 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class Admin::PortfoliosController < ApplicationController
 
+    layout "wafflemix/admin"
+
     def index
       @portfolios = Portfolio.all
   
