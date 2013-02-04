@@ -71,5 +71,16 @@ module Wafflemix
         format.json { head :no_content }
       end
     end
+
+    def sort
+      params[:portfolio].sort { |a, b| a <=> b }.each_with_index do |id, index|
+        value = id[1][:id]
+        position = id[1][:position]
+        position = position.to_i + 1
+        id[1][:parent_id] == "null" ? parent = nil : parent = id[1][:parent_id]
+        Portfolio.update(value, :position => position, :parent_id => parent)
+      end
+      render :nothing => true
+    end
   end
 end
