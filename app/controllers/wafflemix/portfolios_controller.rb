@@ -22,5 +22,14 @@ module Wafflemix
         format.json { render json: @portfolio }
       end
     end
+
+    def mercury_update
+      portfolio = Portfolio.find(params[:id])
+      portfolio.title   = params[:content][:portfolio_title][:value]
+      portfolio.intro   = params[:content][:portfolio_intro][:value]
+      portfolio.content = params[:content][:portfolio_content][:value]
+      portfolio.save!
+      render text: ""
+    end
   end
 end

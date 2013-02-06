@@ -10,9 +10,11 @@ Wafflemix::Engine.routes.draw do
     get :tagged, :on => :member
   end
 
+  resources :portfolios, :only => [:index, :show] do
+    member { post :mercury_update }
+  end
 
   resources :categories
-  resources :portfolios
 
   namespace :admin do
     resources :pages do
