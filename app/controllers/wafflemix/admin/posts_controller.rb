@@ -25,6 +25,7 @@ module Wafflemix
 
     def new
       @post = Post.new
+      @post.build_meta_content
 
       respond_to do |format|
         format.html
@@ -34,6 +35,10 @@ module Wafflemix
 
     def edit
       @post = Post.find(params[:id])
+
+      unless @post.meta_content
+        @post.build_meta_content
+      end
     end
 
     def create

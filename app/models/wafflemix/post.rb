@@ -1,7 +1,7 @@
 module Wafflemix
 
   class Post < ActiveRecord::Base
-    attr_accessible :draft, :link_url, :published_at, :translations_attributes, :locale, :title, :content, :tag_list, :category_ids
+    attr_accessible :draft, :link_url, :published_at, :translations_attributes, :locale, :title, :content, :tag_list, :category_ids, :meta_content_attributes
 
     acts_as_taggable
     ActsAsTaggableOn.force_parameterize = true
@@ -11,8 +11,11 @@ module Wafflemix
 
     has_many :categoricals, :as => :categorical
     has_many :categories, :through => :categoricals
+    has_one :meta_content, :as => :metable, :class_name => 'Wafflemix::MetaContent'
 
     translates :title, :body, :excerpt
+
+    accepts_nested_attributes_for :meta_content
 
     class Translation
       attr_accessible :title, :body, :excerpt, :locale

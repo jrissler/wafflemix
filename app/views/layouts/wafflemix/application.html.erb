@@ -6,7 +6,15 @@
     <meta name="keywords" content="<%= @page.meta_content.meta_keywords %>" />
     <meta name="description" content="<%= @page.meta_content.meta_description %>" />
   <% else %>
-    <title><%= @page.title %></title>
+    <% if content_for?(:page_title) %>
+      <title><%= yield :page_title %></title>
+    <% end %>
+    <% if content_for(:page_keywords) %>
+      <meta name="keywords" content="<%= yield :page_keywords %>" />
+    <% end %>
+    <% if content_for?(:page_description) %>
+      <meta name="description" content="<%= yield :page_description %>" />
+    <% end %>
   <% end %>
   <%= stylesheet_link_tag    "wafflemix/application", :media => "all" %>
   <%= javascript_include_tag "wafflemix/application" %>
