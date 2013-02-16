@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wafflemix</title>
+  <% if @page && @page.meta_content %>
+    <title><%= @page.meta_content.meta_title %></title>
+    <meta name="keywords" content="<%= @page.meta_content.meta_keywords %>" />
+    <meta name="description" content="<%= @page.meta_content.meta_description %>" />
+  <% else %>
+    <title><%= @page.title %></title>
+  <% end %>
   <%= stylesheet_link_tag    "wafflemix/application", :media => "all" %>
   <%= javascript_include_tag "wafflemix/application" %>
   <%= csrf_meta_tags %>

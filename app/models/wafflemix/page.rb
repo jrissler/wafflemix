@@ -1,11 +1,12 @@
 module Wafflemix
   class Page < ActiveRecord::Base
-    attr_accessible :deletable, :draft, :link_url, :parent_id, :position, :show_in_menu, :skip_to_first, :title, :translations_attributes, :locale, :content_parts_attributes
+    attr_accessible :deletable, :draft, :link_url, :parent_id, :position, :show_in_menu, :skip_to_first, :title, :translations_attributes, :locale, :content_parts_attributes, :meta_content_attributes
 
     has_many :content_parts, :as => :contentable, :class_name => 'Wafflemix::ContentSection'
     has_one :meta_content, :as => :metable, :class_name => 'Wafflemix::MetaContent'
 
     accepts_nested_attributes_for :content_parts
+    accepts_nested_attributes_for :meta_content
 
     default_scope  :order => 'position ASC'
     scope :active, where(:draft => false, :show_in_menu => true)

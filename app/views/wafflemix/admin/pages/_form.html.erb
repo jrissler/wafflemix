@@ -2,6 +2,9 @@
 
     <%= f.inputs :name => "Basic" do %>
       <%= f.input :title %>
+      <%= f.semantic_fields_for :meta_content do |meta_content| %>
+        <%= meta_content.inputs :meta_title, :meta_keywords, :meta_description %>
+      <% end %>
       <%= label_tag :content_sections %>
       <ul class="nav nav-tabs" id="content_part_tab">
         <% @page.content_parts.each do |content_part| %>

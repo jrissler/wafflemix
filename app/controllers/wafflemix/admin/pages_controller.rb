@@ -25,6 +25,7 @@ module Wafflemix
 
     def new
       @page = Page.new
+      @page.build_meta_content
 
       respond_to do |format|
         format.html
@@ -34,6 +35,10 @@ module Wafflemix
 
     def edit
       @page = Page.find_by_link_url(params[:id])
+
+      unless @page.meta_content
+        @page.build_meta_content
+      end
     end
 
     def create
