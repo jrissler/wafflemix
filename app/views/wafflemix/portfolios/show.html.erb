@@ -1,3 +1,21 @@
+<%= content_for :page_title do %>
+  <% if @portfolio.meta_content && !@portfolio.meta_content.meta_title.blank? %>
+    <%= @portfolio.meta_content.meta_title %>
+  <% else %>
+    <%= @portfolio.title %>
+  <% end %>
+<% end %>
+<%= content_for :page_keywords do %>
+  <% if @portfolio.meta_content %>
+    <%= @portfolio.meta_content.meta_keywords %>
+  <% end %>
+<% end %>
+<%= content_for :page_description do %>
+  <% if @portfolio.meta_content %>
+    <%= @portfolio.meta_content.meta_description %>
+  <% end %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,6 +33,4 @@
   <%= @portfolio.content %>
 </p>
 
-
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>

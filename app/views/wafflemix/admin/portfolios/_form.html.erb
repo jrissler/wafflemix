@@ -2,6 +2,9 @@
 
   <%= f.inputs do %>
     <%= f.input :title %>
+    <%= f.semantic_fields_for :meta_content do |meta_content| %>
+      <%= meta_content.inputs :meta_title, :meta_keywords, :meta_description %>
+    <% end %>
     <%= f.input :intro %>
     <%= f.input :content %>
   <% end %>

@@ -25,6 +25,7 @@ module Wafflemix
 
     def new
       @portfolio = Portfolio.new
+      @portfolio.build_meta_content
   
       respond_to do |format|
         format.html
@@ -34,6 +35,10 @@ module Wafflemix
 
     def edit
       @portfolio = Portfolio.find(params[:id])
+
+      unless @portfolio.meta_content
+        @portfolio.build_meta_content
+      end
     end
 
     def create
