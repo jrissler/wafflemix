@@ -44,6 +44,7 @@ PATH
       jquery-rails
       mercury-rails
       rails (~> 3.2.8)
+      spamster
 
 GEM
   remote: http://rubygems.org/
