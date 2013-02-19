@@ -32,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'haml-rails'
   s.add_dependency 'acts-as-taggable-on', '~> 2.3.1'
   s.add_dependency 'american_date'
+  s.add_dependency 'spamster'
 end
