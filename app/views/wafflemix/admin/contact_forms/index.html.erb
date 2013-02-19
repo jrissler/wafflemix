@@ -6,6 +6,7 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Spam</th>
       <th>Actions</th>
     </tr>
 
@@ -13,6 +14,7 @@
     <tr>
       <td><%= contact_form.name %></td>
       <td><%= contact_form.email %></td>
+      <td><%= contact_form.spam? ? 'Yes' : 'No' %></td>
       <td>
         <%= link_to 'Edit', [:edit, :admin, contact_form], :class => 'btn btn-primary btn-small' %>
         <%= link_to 'Delete', [:admin, contact_form], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
