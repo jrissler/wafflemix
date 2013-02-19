@@ -2,6 +2,8 @@ module Wafflemix
   class ContactForm < ActiveRecord::Base
     attr_accessible :email, :message, :name, :subject
 
+    validates_presence_of :email, :message, :name, :subject
+
     include Spamster::Model
     spamster_attrs comment_author: :name, comment_author_email: :email, comment_content: :message
 
