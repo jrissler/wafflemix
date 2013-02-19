@@ -3,22 +3,22 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class ContactFormsController < ApplicationController
 
+    before_filter :find_page
+
     def show
       @contact_form = ContactForm.find(params[:id])
-      @page = Page.find_by_link_url('contact-us')
 
       respond_to do |format|
-        format.html # show.html.erb
+        format.html
         format.json { render json: @contact_form }
       end
     end
 
     def new
       @contact_form = ContactForm.new
-      @page = Page.find_by_link_url('contact-us')
   
       respond_to do |format|
-        format.html # new.html.erb
+        format.html
         format.json { render json: @contact_form }
       end
     end
@@ -36,6 +36,12 @@ module Wafflemix
         end
       end
     end
+
+    private
+
+      def find_page
+        @page = Page.find_by_link_url('contact-us')
+      end
 
   end
 end
