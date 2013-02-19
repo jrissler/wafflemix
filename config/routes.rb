@@ -15,6 +15,7 @@ Wafflemix::Engine.routes.draw do
   end
 
   resources :categories
+  resources :contact_forms
 
   namespace :admin do
     resources :pages do

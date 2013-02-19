@@ -178,6 +178,8 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    spamster (1.0.1)
+      activesupport
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -215,5 +217,6 @@ DEPENDENCIES
   mercury-rails!
   pg (~> 0.14.0)
   sass-rails (~> 3.2.3)
+  spamster
   uglifier (>= 1.0.3)
   wafflemix!

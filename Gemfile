@@ -25,6 +25,9 @@ gem 'american_date'
 
 gem 'jquery-fileupload-rails'
 
+#akismet spam filter
+gem 'spamster'
+
 # TODO convert batch_translations to gem or add to globalize3 gem
 # rails plugin install git://github.com/fidel/batch_translations.git
 
