@@ -47,6 +47,7 @@ module Wafflemix
       t += content_tag(:li, link_to('Posts', admin_posts_path))
       t += content_tag(:li, link_to('Slides', admin_slides_path))
       t += content_tag(:li, link_to('Portfolio', admin_portfolios_path))
+      t += content_tag(:li, link_to('Contact Forms', admin_contact_forms_path))
       t += content_tag(:li, '', :class => 'divider-vertical')
       if user_signed_in?
         t += content_tag(:li, link_to('Logout', destroy_user_session_path, :method => :delete))

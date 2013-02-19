@@ -1,5 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1><span id="page_title" class="mercury-region" data-mercury="full"><%= raw @page.title %></span></h1>
+<div id="content_section_Body" class="mercury-region" data-mercury="full">
+  <%= raw @page.content_parts.content_for('Body') %>
+</div>
+
 <h1>New contact_form</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', contact_forms_path %>
+<% if current_user %>
+  <div id="action_buttons">
+    <%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_page_path(@page.id)}, :class => 'btn btn-info' %>
+    <%= link_to 'Edit Settings', edit_admin_page_path(@page), :class => 'btn btn-info' %>
+    <%= link_to 'Back', pages_path, :class => 'btn btn-info' %>
+  </div>
+<% end %>
+

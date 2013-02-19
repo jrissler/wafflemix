@@ -30,6 +30,7 @@ Wafflemix::Engine.routes.draw do
     resources :categories
     resources :content_sections
     resources :posts
+    resources :contact_forms
     resources :portfolios do
       collection { post :sort }
     end
@@ -42,6 +43,8 @@ Wafflemix::Engine.routes.draw do
     class_name: '::Wafflemix::User',
     module: :devise,
   }
+
+  match "/contact-us" => "contact_forms#new"
 
   root :to => "pages#home"
 

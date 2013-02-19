@@ -1,0 +1,36 @@
+<div class="span9">
+  <div class='page-header'>
+    <h1>Contact Forms</h1>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @contact_forms.each do |contact_form| %>
+    <tr>
+      <td><%= contact_form.name %></td>
+      <td><%= contact_form.email %></td>
+      <td>
+        <%= link_to 'Edit', [:edit, :admin, contact_form], :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'Delete', [:admin, contact_form], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="span3">
+  <div class='page-header'>
+    <h1>Options</h1>
+  </div>
+  <ul class="nav nav-tabs nav-stacked">
+    <li><%= link_to 'Add a Contact Form', new_admin_contact_form_path %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+    <li><%= link_to "Test Link", '#' %></li>
+  </ul>
+</div>
