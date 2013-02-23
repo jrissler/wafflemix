@@ -11,6 +11,8 @@ module Wafflemix
 
     has_many :categoricals, :as => :categorical
     has_many :categories, :through => :categoricals
+    has_many :images, :as => :imageable
+    has_many :assets, :through => :images
     has_one :meta_content, :as => :metable, :class_name => 'Wafflemix::MetaContent'
 
     translates :title, :body, :excerpt
