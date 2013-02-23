@@ -34,7 +34,7 @@
   </script>
 <% end %>
 
-<h3>Slide Images</h3>
+<h3>Post Images</h3>
 <ul id="droppable">
   <% @post.assets.each do |asset| %>
     <li><%= image_tag asset.asset.thumb('80x80').url if asset.asset_uid %></li>
@@ -42,7 +42,7 @@
 </ul>
 
 <h3>Available Images</h3>
-<p>Drag to Slide Images to use an image.</p>
+<p>Drag to Post Images to use an image.</p>
 <ul id="draggable">
   <% ::Wafflemix::Asset.all.each do |asset| %>
     <%= content_tag "li", class: "add_image", data: {resource: @post.class.to_s, resource_id: @post.id, asset_id: asset.id} do %>
