@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts-as-taggable-on', '~> 2.3.1'
   s.add_dependency 'american_date'
   s.add_dependency 'spamster'
+  s.add_dependency 'net-scp', '~> 1.1'
 end

@@ -15,6 +15,7 @@ gem 'mercury-rails', :git => 'https://github.com/jejacks0n/mercury.git', :ref =>
 gem 'devise', '2.0.4'
 gem 'ancestry', '1.3.0'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'net-scp', '1.1'
 
 #image handling
 gem 'dragonfly'
