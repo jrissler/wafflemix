@@ -33,7 +33,9 @@ module Wafflemix
 
     def mercury_update
       page = Page.find(params[:id])
-      page.title = params[:content][:page_title][:value]
+
+      page.title = params[:content][:page_title][:value] if params[:content][:page_title]
+
       params[:content].each do |key, value|
         if key =~ /content_section/
           section = key.gsub /(content_section_|_)/, "content_section_" => "", "_" => " "
