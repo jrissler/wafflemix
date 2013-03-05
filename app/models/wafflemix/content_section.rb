@@ -10,7 +10,11 @@ module Wafflemix
 
 		def self.content_for(name)
 			part = where(["name LIKE ?", "%#{name}%"]).first
-			part.content
+      if part
+			  part.content
+      else
+        false
+      end
 		end
 
   end
