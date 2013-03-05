@@ -1,6 +1,8 @@
 Wafflemix::Engine.routes.draw do
   mount Mercury::Engine => '/'
 
+  resources :assets
+
   resources :pages, :only => [:index, :show, :home] do
     member { post :mercury_update }
   end
