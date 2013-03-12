@@ -17,6 +17,7 @@
       <td><%= post.published_at %></td>
       <td>
         <%= link_to 'Edit', [:edit, :admin, post], :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'Edit Content', "/editor/posts/#{post.id}", :class => 'btn btn-primary btn-small' %>
         <%= link_to 'Delete', [:admin, post], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
       </td>
     </tr>
