@@ -13,7 +13,7 @@ module Wafflemix
 
     def show
       if params[:id]
-        @page = Page.find_by_link_url(params[:id])
+        @page = Page.find(params[:id])
       else
         @page = Page.find_by_link_url(params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
       end
@@ -24,7 +24,7 @@ module Wafflemix
     end
 
     def home
-      @page = Page.find_by_link_url("home")
+      @page = Page.find_by_link_url('home')
 
       respond_to do |format|
         format.html
@@ -38,7 +38,7 @@ module Wafflemix
 
       params[:content].each do |key, value|
         if key =~ /content_section/
-          section = key.gsub /(content_section_|_)/, "content_section_" => "", "_" => " "
+          section = key.gsub /(content_section_|_)/, 'content_section_' => '', '_' => ''
           content_to_update = page.content_parts.find_by_name(section)
           content_to_update.content = value[:value]
           content_to_update.save
