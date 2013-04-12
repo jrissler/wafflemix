@@ -33,9 +33,9 @@ module Wafflemix
 
     def mercury_update
       if params[:id]
-        @page = Page.find(params[:id])
+        page = Page.find(params[:id])
       else
-        @page = Page.find_by_link_url(params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
+        page = Page.find_by_link_url(params[:path].to_s.split('/').last)#(params[:path] ? params[:path].to_s.split('/').last : params[:id])
       end
 
       page.title = params[:content][:page_title][:value] if params[:content][:page_title]
