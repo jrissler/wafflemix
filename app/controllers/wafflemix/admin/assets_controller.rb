@@ -3,7 +3,7 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class Admin::AssetsController < ApplicationController
 
-    layout "wafflemix/admin"
+    layout 'wafflemix/example_layout'
 
     def index
       @assets = Asset.all

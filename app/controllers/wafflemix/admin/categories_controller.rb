@@ -3,7 +3,7 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class Admin::CategoriesController < ApplicationController
 
-    layout "wafflemix/admin"
+    layout 'wafflemix/example_layout'
 
     def index
       @categories = Category.all
