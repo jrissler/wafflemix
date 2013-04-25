@@ -1,11 +1,11 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
 # Declare your gem's dependencies in wafflemix.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem "jquery-rails"
+gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 2.0.4.1'
 gem 'formtastic', '~> 2.2.1'
 gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
@@ -43,7 +43,8 @@ group :assets do
 end
 
 group :development do
-  gem "pg", "~> 0.14.0"
+  gem 'pg', '~> 0.14.0'
+  gem 'quiet_assets'
 end
 
 # Declare any dependencies that are still in development here instead of in
