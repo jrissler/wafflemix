@@ -5,7 +5,7 @@
 // the compiled file.
 //
 //= require jquery
-//= require jquery_ui_1_8_24
+//= require wafflemix/admin/jquery_ui_1_8_24
 //= require jquery_ujs
 //= require bootstrap-dropdown
 //= require bootstrap-tab
