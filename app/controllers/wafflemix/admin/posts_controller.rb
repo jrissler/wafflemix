@@ -3,7 +3,7 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class Admin::PostsController < ApplicationController
 
-    layout 'wafflemix/example_layout'
+    layout 'wafflemix/admin'
 
     def index
       @posts = Post.all

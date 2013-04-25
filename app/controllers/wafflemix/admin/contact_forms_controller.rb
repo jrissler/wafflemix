@@ -3,7 +3,7 @@ require_dependency "wafflemix/application_controller"
 module Wafflemix
   class Admin::ContactFormsController < ApplicationController
 
-    layout 'wafflemix/example_layout'
+    layout 'wafflemix/admin'
 
     def index
       @contact_forms = ContactForm.all
