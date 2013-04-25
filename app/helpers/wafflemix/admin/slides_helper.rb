@@ -1,6 +1,5 @@
 module Wafflemix
-  module SlidesHelper
-
+  module Admin::SlidesHelper
     def slide_tree_view(slides)
       slides.map do |slide|
         content_tag(:li, :id => dom_id(slide)) do
@@ -8,6 +7,5 @@ module Wafflemix
         end
       end.join.html_safe
     end
-
   end
 end
