@@ -10,18 +10,13 @@ module Wafflemix
     #one convenient method to pass jq_upload the necessary information
     def to_jq_upload
       {
-        :files => [
-          {
-            :name => read_attribute(:asset_name),
-            :size => asset_size,
-            :url => asset_url,
-            :thumbnail_url => asset.thumb('80x80#').url,
-            :delete_url => Wafflemix::Engine::routes.url_helpers.admin_asset_path(:id => id),
-            :delete_type => 'DELETE'
-          }
-        ]
+        "name" => read_attribute(:asset_name),
+        "size" => asset_size,
+        "url" => asset_url,
+        "thumbnail_url" => asset.thumb('80x80#').url,
+        "delete_url" => Wafflemix::Engine::routes.url_helpers.admin_asset_path(:id => id),
+        "delete_type" => "DELETE"
       }
     end
-
   end
 end
