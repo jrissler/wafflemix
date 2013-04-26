@@ -9,7 +9,7 @@ module Wafflemix
     end
 
 		def self.content_for(name)
-			part = where(["name LIKE ?", "%#{name}%"]).first
+      part = where('lower(name) = ?', "%#{name.downcase}%").first
       if part
 			  part.content
       else
