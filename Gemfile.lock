@@ -9,13 +9,12 @@ GIT
       paper_trail (~> 2)
 
 GIT
-  remote: https://github.com/jejacks0n/mercury.git
-  revision: e220627d6b71e0eed0cdb15cf0a54f485ae073d9
-  ref: e220627d6b71e0eed0cdb15cf0a54f485ae073d9
+  remote: https://github.com/jrissler/mercury.git
+  revision: 6daffeeb487ec24b8297e7c8d01b59a7050513ae
   specs:
-    mercury-rails (0.8.0)
-      coffee-rails
-      railties (~> 3.2)
+    mercury-rails (0.9.0)
+      coffee-rails (>= 3.2.2)
+      railties (>= 3.2)
 
 GIT
   remote: https://github.com/niedfelj/formtastic-bootstrap.git
