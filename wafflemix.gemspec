@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'formtastic', '~> 2.2.1'
   s.add_dependency 'formtastic-bootstrap'
   s.add_dependency 'globalize3'
-  s.add_dependency 'mercury-rails'
+  s.add_dependency 'mercury-rails', :git => 'https://github.com/jrissler/mercury.git'
   s.add_dependency 'devise', '2.0.4'
   s.add_dependency 'ancestry', '1.3.0'
   s.add_dependency 'dragonfly'
