@@ -1,5 +1,7 @@
 module Wafflemix
   class Slide < ActiveRecord::Base
+    default_scope  :order => 'position ASC'
+
     attr_accessible :name, :position, :parent_id, :slide_link, :content
 
     validates_presence_of :name
