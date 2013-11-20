@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/svenfuchs/globalize3.git
-  revision: 06c87a8ebdcb30f994e31db008f369a25505d26e
-  branch: master
-  specs:
-    globalize3 (0.3.0)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      paper_trail (~> 2)
-
-GIT
   remote: https://github.com/jrissler/mercury.git
   revision: 6daffeeb487ec24b8297e7c8d01b59a7050513ae
   specs:
@@ -117,6 +107,14 @@ GEM
     formatador (0.2.4)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    globalize (3.0.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
+    globalize3 (0.3.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
     haml (4.0.0)
       tilt
     haml-rails (0.4)
@@ -133,6 +131,8 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.1.0)
+      railties (>= 3.1.0)
     json (1.7.7)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -145,7 +145,7 @@ GEM
     net-ssh (2.6.5)
     nokogiri (1.5.6)
     orm_adapter (0.0.7)
-    paper_trail (2.7.1)
+    paper_trail (2.7.2)
       activerecord (~> 3.0)
       railties (~> 3.0)
     pg (0.14.1)
@@ -216,10 +216,11 @@ DEPENDENCIES
   fog
   formtastic (~> 2.2.1)
   formtastic-bootstrap!
-  globalize3!
+  globalize (~> 3.0.0)
   haml-rails
   jquery-fileupload-rails
   jquery-rails
+  jquery-ui-rails
   mercury-rails!
   net-scp (= 1.1)
   pg (~> 0.14.0)
