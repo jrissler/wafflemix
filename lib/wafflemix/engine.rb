@@ -3,7 +3,7 @@ module Wafflemix
     isolate_namespace Wafflemix
 
     initializer 'ActiveAdmin precompile hook' do |app|
-    app.config.assets.precompile += ['application.js', 'application.css']
+    app.config.assets.precompile += ['admin/admin_js.js', 'admin/admin.css']
     end
   end
 end
