@@ -7,9 +7,9 @@ Setup your db here: wafflemix/test/dummy/config/database.yml
 
 start dummy app with: rails server
 
-= Using as an engine + settig up new application
+= Using as an engine + setting up new application
 
-1. Add wafflemix to your gemfile - gem 'wafflemix', :git => 'git://github.com/jrissler/wafflemix.git'
+1. Add wafflemix to your gemfile - gem 'wafflemix', '~> 0.0.5'
 
 2. config/application.rb - add require "wafflemix" below bundle method.
 
