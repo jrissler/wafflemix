@@ -1,5 +1,3 @@
-require_dependency "wafflemix/application_controller"
-
 module Wafflemix
   class CategoriesController < ApplicationController
     before_filter :find_page

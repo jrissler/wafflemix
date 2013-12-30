@@ -1,5 +1,5 @@
 module Wafflemix
-  class Wafflemix::ApplicationController < ApplicationController
+  class ApplicationController < ActionController::Base
 
     before_filter :menu_items
 
