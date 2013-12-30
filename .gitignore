@@ -16,3 +16,5 @@ test/dummy/config/database.yml
 
 test/dummy/config/database.yml
 test/dummy/config/initializers/local_s3.rb
+
+atlassian-ide-plugin.xml

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Wafflemix::VERSION
   s.authors     = ["James Rissler"]
   s.email       = ["risslerjames@gmail.com"]
-  s.homepage    = "Coming Soon"
+  s.homepage    = "https://github.com/jrissler/wafflemix"
   s.summary     = "Bootstrap based CMS"
   s.description = "Coming Soon"
 
