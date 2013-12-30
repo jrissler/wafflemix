@@ -15,9 +15,11 @@ start dummy app with: rails server
 
 3. config/routes.rb - add: mount Wafflemix::Engine => "/"
 
-4. rake wafflemix:install:migrations
+4. Include wafflemix helpers in application_controller.rb: helper Wafflemix::Engine.helpers
 
-5. rake db:migrate
+5. rake wafflemix:install:migrations
+
+6. rake db:migrate
 
 = Devise
 
