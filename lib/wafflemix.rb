@@ -10,6 +10,8 @@ require 'haml-rails'
 require 'acts-as-taggable-on'
 require 'american_date'
 require 'spamster'
+require 'jquery-fileupload-rails'
+require 'jquery-rails'
 
 require 'haml'
 

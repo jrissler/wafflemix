@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'dragonfly', '0.9.14'
   s.add_dependency 'fog', '1.10.0'
   s.add_dependency 'jquery-fileupload-rails', '0.3.5'
+
   s.add_dependency 'haml-rails', '0.4'
   s.add_dependency 'acts-as-taggable-on', '~> 2.3.1'
   s.add_dependency 'american_date', '1.0.0'

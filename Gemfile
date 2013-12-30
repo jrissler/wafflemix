@@ -5,31 +5,6 @@ source 'http://rubygems.org'
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'bootstrap-sass', '~> 2.0.4.1'
-gem 'formtastic', '~> 2.2.1'
-gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
-gem 'globalize', '~> 3.0.0'
-gem 'mercury-rails', :git => 'https://github.com/jrissler/mercury.git'
-#gem 'mercury-rails', :git => 'https://github.com/jejacks0n/mercury.git', :ref => 'e220627d6b71e0eed0cdb15cf0a54f485ae073d9'
-gem 'devise', '2.0.4'
-gem 'ancestry', '1.3.0'
-gem 'acts-as-taggable-on', '~> 2.3.1'
-gem 'net-scp', '1.1'
-
-#image handling
-gem 'dragonfly'
-gem 'fog'
-
-gem 'haml-rails'
-gem 'american_date'
-
-gem 'jquery-fileupload-rails'
-
-#akismet spam filter
-gem 'spamster'
-
 # TODO convert batch_translations to gem or add to globalize3 gem
 # rails plugin install git://github.com/fidel/batch_translations.git
 
