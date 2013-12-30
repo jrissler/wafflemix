@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails', '2.2.1'
   s.add_dependency 'bootstrap-sass', '~> 2.0.4.1'
   s.add_dependency 'formtastic', '~> 2.2.1'
-  s.add_dependency 'formtastic-bootstrap', '2.0.0'
+  s.add_dependency 'formtastic-bootstrap', '2.1.3'
   s.add_dependency 'globalize3', '0.3.0'
   s.add_dependency 'mercury-rails', '0.9.0'
   s.add_dependency 'devise', '2.0.4'
