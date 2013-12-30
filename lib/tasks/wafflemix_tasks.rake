@@ -5,7 +5,7 @@ namespace :wafflemix do
   #   # Task goes here
   # end
 
-  desc "Create Initial Pages"
+  desc 'Create Initial Pages'
   task :initial_setup do
     ::Wafflemix::Page.create(:link_url => '/', :title => 'Home', :draft => false, :deletable => false)
     ::Wafflemix::Role.create(:name => 'admin')
