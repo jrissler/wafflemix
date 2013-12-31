@@ -1,6 +1,6 @@
 = Wafflemix
 
-To run this app locally:
+To run this engine locally:
 cd test/dummy
 
 Setup your db here: wafflemix/test/dummy/config/database.yml
@@ -13,7 +13,13 @@ start dummy app with: rails server
 
 2. config/application.rb - add require "wafflemix" below bundle method.
 
-3. config/routes.rb - add: mount Wafflemix::Engine => "/"
+3. config/routes.rb add:
+    mount Wafflemix::Engine => "/"
+
+    devise_for :user, {
+      class_name: 'Wafflemix::User',
+      module: :devise,
+    }
 
 4. Include wafflemix helpers in application_controller.rb: helper Wafflemix::Engine.helpers
 
@@ -63,7 +69,7 @@ Add the following to application.rb within the application class definition:
 
 config.middleware.insert 0, 'Dragonfly::Middleware', :images
 
-In an initializer or in config/environments/development.rb set:
+In an initializer or in config/environments set:
 
 ENV['S3_KEY']            = 'your_key'
 ENV['S3_SECRET']         = 'your_secret'
@@ -89,7 +95,7 @@ For example, changing the root url:
     root :to => "posts#index"
   end
 
-##Todo's
+## Todo's
 New app generators
 Instructions for S3 config
 Seed Default roles
