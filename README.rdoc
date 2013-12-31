@@ -9,7 +9,7 @@ start dummy app with: rails server
 
 = Using as an engine + setting up new application
 
-1. Add wafflemix to your gemfile - gem 'wafflemix', '~> 0.0.5'
+1. Add wafflemix to your gemfile - gem 'wafflemix', '~> 0.0.6'
 
 2. config/application.rb - add require "wafflemix" below bundle method.
 
